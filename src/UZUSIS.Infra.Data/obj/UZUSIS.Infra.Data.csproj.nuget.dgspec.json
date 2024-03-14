@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/gabrielrichard/UZUSIS.App/src/UZUSIS.Infra.Data/UZUSIS.Infra.Data.csproj": {}
+    "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Infra.Data\\UZUSIS.Infra.Data.csproj": {}
   },
   "projects": {
-    "/home/gabrielrichard/UZUSIS.App/src/UZUSIS.Infra.Data/UZUSIS.Infra.Data.csproj": {
+    "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Application\\UZUSIS.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabrielrichard/UZUSIS.App/src/UZUSIS.Infra.Data/UZUSIS.Infra.Data.csproj",
-        "projectName": "UZUSIS.Infra.Data",
-        "projectPath": "/home/gabrielrichard/UZUSIS.App/src/UZUSIS.Infra.Data/UZUSIS.Infra.Data.csproj",
-        "packagesPath": "/home/gabrielrichard/.nuget/packages/",
-        "outputPath": "/home/gabrielrichard/UZUSIS.App/src/UZUSIS.Infra.Data/obj/",
+        "projectUniqueName": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Application\\UZUSIS.Application.csproj",
+        "projectName": "UZUSIS.Application",
+        "projectPath": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Application\\UZUSIS.Application.csproj",
+        "packagesPath": "C:\\Users\\Gabri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/gabrielrichard/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +60,81 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/home/gabrielrichard/.dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Infra.Data\\UZUSIS.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Infra.Data\\UZUSIS.Infra.Data.csproj",
+        "projectName": "UZUSIS.Infra.Data",
+        "projectPath": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Infra.Data\\UZUSIS.Infra.Data.csproj",
+        "packagesPath": "C:\\Users\\Gabri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Infra.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Application\\UZUSIS.Application.csproj": {
+                "projectPath": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Application\\UZUSIS.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

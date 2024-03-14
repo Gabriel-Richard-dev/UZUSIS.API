@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UZUSIS.Application\UZUSIS.Application.csproj" />
+    <ProjectReference Include="..\UZUSIS.Infra.Data\UZUSIS.Infra.Data.csproj" />
   </ItemGroup>
 
 </Project>

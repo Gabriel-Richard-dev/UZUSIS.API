@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "+C5EjF9kJwSh6LjQw+maN/g1wFnF/PCQRFmDDzKhZ7s1bG2byWfJPkAr04S9MGwD+WhPRQ1nEajQhzC+pWFFZA==",
+  "dgSpecHash": "FbkLax2h/c1yJ7x/ceksoQltRhNN3RaFjQL7rH5e3quqqttm1/YPKqDFkCis2PHEv7iV3Ir8EhQ0BOnHS8YLQA==",
   "success": true,
-  "projectFilePath": "/home/gabrielrichard/UZUSIS.App/src/UZUSIS.Infra.Data/UZUSIS.Infra.Data.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Infra.Data\\UZUSIS.Infra.Data.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gabri\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\Gabri\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.1\\microsoft.extensions.dependencyinjection.abstractions.8.0.1.nupkg.sha512",
+    "C:\\Users\\Gabri\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
