@@ -11,7 +11,7 @@ public class AdminController : BaseController
     {
     }
 
-    [Route("/Oi")]
+    [Route("/")]
     [HttpGet]
     public async Task<IActionResult> PrintOi()
     {
