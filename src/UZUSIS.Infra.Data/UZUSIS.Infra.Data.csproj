@@ -24,4 +24,9 @@
     <ProjectReference Include="..\UZUSIS.Domain\UZUSIS.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Uploads\FotoProduto\" />
+    <Folder Include="Uploads\FotoUsuario\" />
+  </ItemGroup>
+
 </Project>

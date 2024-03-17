@@ -70,3 +70,10 @@ C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\obj\Debug\net8.0\refint\UZUSIS.API
 C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\obj\Debug\net8.0\UZUSIS.API.pdb
 C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\obj\Debug\net8.0\UZUSIS.API.genruntimeconfig.cache
 C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\obj\Debug\net8.0\ref\UZUSIS.API.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\bin\Debug\net8.0\UZUSIS.Domain.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.API\bin\Debug\net8.0\UZUSIS.Domain.pdb

@@ -14,3 +14,7 @@ C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\obj\Debug\net8.0\UZUSIS.Inf
 C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\obj\Debug\net8.0\refint\UZUSIS.Infra.Data.dll
 C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\obj\Debug\net8.0\UZUSIS.Infra.Data.pdb
 C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\obj\Debug\net8.0\ref\UZUSIS.Infra.Data.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\bin\Debug\net8.0\UZUSIS.Infra.Data.runtimeconfig.json
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\bin\Debug\net8.0\UZUSIS.Domain.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\bin\Debug\net8.0\UZUSIS.Domain.pdb
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Infra.Data\obj\Debug\net8.0\UZUSIS.Infra.Data.genruntimeconfig.cache

@@ -26,7 +26,7 @@ public class UZUSISContext : DbContext, IUnityOfWork
     private DbSet<Admin> Admins { get; set; }
     private DbSet<Carrinho> Carrinhos { get; set; }
     private DbSet<Produto> Produtos { get; set; }
-    private DbSet<Payment> Payments { get; set; }
+    private DbSet<Pagamento> Payments { get; set; }
 
     
     

@@ -4,7 +4,8 @@ namespace UZUSIS.Domain.Entities;
 
 public abstract class Pessoa : Entity
 {
-    protected Pessoa(string photoUrl, string nome, string cpf, char genero, string email, string password, string role, char tamanho, DateTime dataNascimento)
+    protected Pessoa(string photoUrl, string nome, string cpf, char genero,
+        string email, string password, string role, string tamanho, DateTime dataNascimento)
     {
         PhotoUrl = photoUrl;
         Nome = nome;
@@ -30,7 +31,7 @@ public abstract class Pessoa : Entity
     public string Email { get; set; }
     public string Password { get; private set; }
     public string Role { get; set; }
-    public char Tamanho { get; set; }
+    public string Tamanho { get; set; }
     
     public DateTime DataNascimento { get; set; }
 

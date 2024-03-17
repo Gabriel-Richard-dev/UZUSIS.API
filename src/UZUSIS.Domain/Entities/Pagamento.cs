@@ -2,10 +2,9 @@
 
 namespace UZUSIS.Domain.Entities;
 
-public class Payment : Entity
+public class Pagamento : Entity
 {
     public Guid RastreadorDePedido { get; set; }
-    public Cliente Cliente { get; set; }
     public Collection<Produto> Produtos { get; set; }
     public DateTime DataDeLancamento { get; set; }
     public DateTime DataDePagamento { get; set; }

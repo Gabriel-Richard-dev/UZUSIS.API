@@ -4,9 +4,9 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Infra.Data.Mappings;
 
-public class PaymentMap : IEntityTypeConfiguration<Payment>
+public class PaymentMap : IEntityTypeConfiguration<Pagamento>
 {
-    public void Configure(EntityTypeBuilder<Payment> builder)
+    public void Configure(EntityTypeBuilder<Pagamento> builder)
     {
         throw new NotImplementedException();
     }
