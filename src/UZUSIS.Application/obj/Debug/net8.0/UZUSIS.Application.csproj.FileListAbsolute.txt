@@ -1,0 +1,12 @@
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\bin\Debug\net8.0\UZUSIS.Application.deps.json
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\bin\Debug\net8.0\UZUSIS.Application.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\bin\Debug\net8.0\UZUSIS.Application.pdb
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\UZUSIS.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\UZUSIS.Application.AssemblyInfoInputs.cache
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\UZUSIS.Application.AssemblyInfo.cs
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\UZUSIS.Application.csproj.CoreCompileInputs.cache
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\UZUSIS.Application.sourcelink.json
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\UZUSIS.Application.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\refint\UZUSIS.Application.dll
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\UZUSIS.Application.pdb
+C:\Users\Gabri\Code\UZUSIS.API\src\UZUSIS.Application\obj\Debug\net8.0\ref\UZUSIS.Application.dll
