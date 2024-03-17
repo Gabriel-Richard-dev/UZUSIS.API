@@ -2,13 +2,9 @@ namespace UZUSIS.Domain.Entities;
 
 public class Admin : Pessoa
 {
-    protected Admin()
-    {
-        
-    }
+    protected Admin() { }
 
-    public Admin(string nome, string cpf, string email, string password, string role) : base(nome, cpf, email, password, role)
+    public Admin(string photoUrl, string nome, string cpf, char genero, string email, string password, string role, char tamanho, DateTime dataNascimento) : base(photoUrl, nome, cpf, genero, email, password, role, tamanho, dataNascimento)
     {
-        Erros = Validate();
     }
 }

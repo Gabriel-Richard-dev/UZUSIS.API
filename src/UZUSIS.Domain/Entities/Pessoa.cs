@@ -4,35 +4,47 @@ namespace UZUSIS.Domain.Entities;
 
 public abstract class Pessoa : Entity
 {
+    protected Pessoa(string photoUrl, string nome, string cpf, char genero, string email, string password, string role, char tamanho, DateTime dataNascimento)
+    {
+        PhotoUrl = photoUrl;
+        Nome = nome;
+        CPF = cpf;
+        Genero = genero;
+        Email = email;
+        Password = password;
+        Role = role;
+        Tamanho = tamanho;
+        DataNascimento = dataNascimento;
+    }
+
     protected Pessoa()
     {
         
     }
-    public Pessoa(string nome, string cpf, string email, string password, string role)
-    {
-        Nome = nome;
-        CPF = cpf;
-        Email = email;
-        Password = password;
-        Role = role;
-        Erros = Validate();
-    }
 
+    public string PhotoUrl { get; set; }
     public string Nome { get; private set; }
     public string CPF { get; set; }
+    
+    public char Genero { get; set; }
     public string Email { get; set; }
     public string Password { get; private set; }
     public string Role { get; set; }
+    public char Tamanho { get; set; }
+    
+    public DateTime DataNascimento { get; set; }
 
 
     public void AtualizaNome(string nome)
     {
         Nome = nome;
+        Validate();
     }
 
     public void AtualizaPassword(string newpass)
     {
         Password = newpass;
+        Validate();
     }
 
 
