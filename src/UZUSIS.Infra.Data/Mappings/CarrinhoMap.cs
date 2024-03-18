@@ -4,10 +4,19 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Infra.Data.Mappings;
 
-public class CarrinhoMap : IEntityTypeConfiguration<Carrinho>
+public class CarrinhoMap : EntityMap<Carrinho>
 {
     public void Configure(EntityTypeBuilder<Carrinho> builder)
     {
-        throw new NotImplementedException();
+
+        builder.ToTable("Carrinho");
+        
+        builder
+            .HasMany(c => c.Produtos);
+
+        builder
+            .HasOne(c => c.Cliente)
+            .WithOne(c => c.Carrinho);
+
     }
 }

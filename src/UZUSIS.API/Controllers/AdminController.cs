@@ -15,6 +15,6 @@ public class AdminController : BaseController
     [HttpGet]
     public async Task<IActionResult> PrintOi()
     {
-        return Ok("oi");
+        return Ok("HELLO WORD");
     }
 }

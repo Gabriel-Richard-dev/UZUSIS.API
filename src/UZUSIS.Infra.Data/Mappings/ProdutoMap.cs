@@ -4,10 +4,10 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Infra.Data.Mappings;
 
-public class ProdutoMap : IEntityTypeConfiguration<Produto>
+public class ProdutoMap : EntityMap<Produto>
 {
     public void Configure(EntityTypeBuilder<Produto> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("Produto");
     }    
 }

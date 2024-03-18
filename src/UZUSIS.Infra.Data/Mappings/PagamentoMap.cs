@@ -4,10 +4,16 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Infra.Data.Mappings;
 
-public class PaymentMap : IEntityTypeConfiguration<Pagamento>
+public class PagamentoMap : EntityMap<Pagamento>
 {
     public void Configure(EntityTypeBuilder<Pagamento> builder)
     {
-        throw new NotImplementedException();
+        builder.ToTable("Pagamento");
+        
+
+        builder
+            .HasMany(p => p.Produtos);
+        
+
     }
 }
