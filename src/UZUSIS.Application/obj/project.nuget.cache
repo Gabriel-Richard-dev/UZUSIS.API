@@ -1,10 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "XaT9AkD0xLCDcW0KUUoYFMrf64HxpAMeJeWT+ZOkNEofJ8KfYSQAsfQpkTMq2cOlIDA/YRKkOEicC/ttMuHWlw==",
+  "dgSpecHash": "lC8Y5nO0s6xfwIuz8fm+FlFAe7261TX2R5TxuXpczZqh51oODxnguRF5rzaJDHillShf8vpY/PE9NlQmMw/w9w==",
   "success": true,
   "projectFilePath": "/home/gabrielrichard/UZUSIS.API/src/UZUSIS.Application/UZUSIS.Application.csproj",
   "expectedPackageFiles": [
-    "/home/gabrielrichard/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512"
+    "/home/gabrielrichard/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.3/microsoft.aspnetcore.authentication.jwtbearer.8.0.3.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.abstractions/7.4.1/microsoft.identitymodel.abstractions.7.4.1.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.4.1/microsoft.identitymodel.jsonwebtokens.7.4.1.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.logging/7.4.1/microsoft.identitymodel.logging.7.4.1.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.protocols/7.1.2/microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.tokens/7.4.1/microsoft.identitymodel.tokens.7.4.1.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/system.identitymodel.tokens.jwt/7.4.1/system.identitymodel.tokens.jwt.7.4.1.nupkg.sha512"
   ],
   "logs": []
 }

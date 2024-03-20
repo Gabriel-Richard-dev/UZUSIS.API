@@ -9,5 +9,4 @@ public class AdminRepository : EntityRepository<Admin>, IAdminRepository
     public AdminRepository(UZUSISContext context) : base(context)
     { }
     
-    
 }
