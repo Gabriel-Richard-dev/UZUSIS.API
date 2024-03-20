@@ -10,16 +10,13 @@ public abstract class EntityRepository<T> : IEntityRepository<T> where T : Entit
 {
     protected EntityRepository(UZUSISContext context)
     {
-        
         _context = context;
         _dbSet = _context.Set<T>();
     }
 
-    private readonly UZUSISContext _context;
+    protected readonly UZUSISContext _context;
     private readonly DbSet<T> _dbSet;
     private IUnityOfWork UnityOfWork => _context;
-    
-    
     
     public virtual async Task<T> Create(T entity)
     {

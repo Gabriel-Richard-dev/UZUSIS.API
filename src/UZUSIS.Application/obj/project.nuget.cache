@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "3O/rJnX+EsLZLaamp81JKfr0kfMLt0teHS+PMKSwi3wh5oVoz6YJ92FL9SSJwThC6Bci8jwKRoa01CSJ+CQGQg==",
+  "dgSpecHash": "XaT9AkD0xLCDcW0KUUoYFMrf64HxpAMeJeWT+ZOkNEofJ8KfYSQAsfQpkTMq2cOlIDA/YRKkOEicC/ttMuHWlw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Gabri\\Code\\UZUSIS.API\\src\\UZUSIS.Application\\UZUSIS.Application.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/gabrielrichard/UZUSIS.API/src/UZUSIS.Application/UZUSIS.Application.csproj",
+  "expectedPackageFiles": [
+    "/home/gabrielrichard/.nuget/packages/fluentvalidation/11.9.0/fluentvalidation.11.9.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -2,7 +2,7 @@
 
 namespace UZUSIS.Domain.Entities;
 
-public class Favoritos
+public class Favorito : Entity
 {
     public Cliente Cliente { get; set; }
     public Collection<Produto> Produtos { get; set; }

@@ -1,3 +1,4 @@
+using UZUSIS.Application.Configuration;
 using UZUSIS.Infra.Data.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDependencyInjection();
-
+builder.Services.ConfigureMappings();
 
 var app = builder.Build();
 
