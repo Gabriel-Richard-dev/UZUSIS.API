@@ -4,7 +4,9 @@ using System.Text;
 using AutoMapper;
 using Microsoft.IdentityModel.Tokens;
 using UZUSIS.Application.Contracts.Services;
+using UZUSIS.Application.DTO;
 using UZUSIS.Domain.Entities;
+
 
 namespace UZUSIS.Application.Services;
 
@@ -14,7 +16,7 @@ public class TokenService : BaseService, ITokenService
     {
     }
 
-    public string GenerateToken(Pessoa pessoa)
+    public string GenerateToken(PessoaDTO pessoa)
     {
         var key = Encoding.ASCII.GetBytes(UZUSIS.Domain.Keys.Key.Secret);
         var tokenConfig = new SecurityTokenDescriptor

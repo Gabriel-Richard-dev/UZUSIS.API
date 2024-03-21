@@ -14,5 +14,6 @@ public class Cliente : Pessoa
     }
 
     public Carrinho Carrinho { get; set; }
+   
     
 }
