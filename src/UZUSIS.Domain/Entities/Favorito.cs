@@ -4,6 +4,7 @@ namespace UZUSIS.Domain.Entities;
 
 public class Favorito : Entity
 {
-    public Cliente Cliente { get; set; }
-    public Collection<Produto> Produtos { get; set; }
+    public Usuario Cliente { get; set; }
+    public Collection<ProdutoCarrinho> ProdutosCarrinho { get; set; } = new();
+    
 }

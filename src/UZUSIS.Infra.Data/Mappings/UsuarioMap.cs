@@ -4,9 +4,9 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Infra.Data.Mappings;
 
-public class UsuarioMap : EntityMap<Admin>
+public class UsuarioMap : EntityMap<Usuario>
 {
-    public void Configure(EntityTypeBuilder<Admin> builder)
+    public void Configure(EntityTypeBuilder<Usuario> builder)
     {
         builder.ToTable("Admin");
         

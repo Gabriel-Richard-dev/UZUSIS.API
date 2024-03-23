@@ -51,7 +51,7 @@ public class Usuario  : Entity
 
     public List<string?>? Validate()
     {
-        var validator = new PessoaValidator();
+        var validator = new UsuarioValidator();
         var validatorResult = validator.Validate(this);
 
         if (validatorResult is not null)

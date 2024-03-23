@@ -11,9 +11,6 @@ public class ClientePagamentoMap : EntityMap<ClientePagamento>
     {
         builder.ToTable("ClientePagamento");
 
-        builder.HasOne(cp => cp.Cliente);
-
-        builder.HasOne(cp => cp.Pagamento);
         
     }
 }

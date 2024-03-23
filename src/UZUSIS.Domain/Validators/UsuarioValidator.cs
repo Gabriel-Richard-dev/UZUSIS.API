@@ -3,9 +3,9 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Domain.Validators;
 
-public class PessoaValidator : AbstractValidator<Usuario>
+public class UsuarioValidator : AbstractValidator<Usuario>
 {
-    public PessoaValidator()
+    public UsuarioValidator()
     {
         RuleFor(p => p.Nome)
             .NotNull()

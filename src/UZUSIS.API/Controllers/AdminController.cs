@@ -14,7 +14,7 @@ public class AdminController : BaseController
     {
     }
 
-    private readonly IAdminService _adminService;
+    private readonly IUsuarioService _usuarioService;
     
     
     [Route("cadastrar-cliente")]

@@ -2,6 +2,6 @@
 
 public class ClientePagamento : Entity
 {
-    public Cliente Cliente { get; set; }
+    public Usuario Cliente { get; set; }
     public Pagamento Pagamento { get; set; }
 }

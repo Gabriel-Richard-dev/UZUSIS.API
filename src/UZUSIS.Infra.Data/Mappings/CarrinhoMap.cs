@@ -14,9 +14,5 @@ public class CarrinhoMap : EntityMap<Carrinho>
         builder
             .HasMany(c => c.Produtos);
 
-        builder
-            .HasOne(c => c.Cliente)
-            .WithOne(c => c.Carrinho);
-
     }
 }

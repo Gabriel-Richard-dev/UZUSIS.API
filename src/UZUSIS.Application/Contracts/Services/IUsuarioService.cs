@@ -2,8 +2,8 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Application.Contracts.Services;
 
-public interface IAdminService : IBaseService
+public interface IUsuarioService : IBaseService
 {
-    Task<List<Admin>?> GetAdmin();
-    Task<Admin?> GetAdmin(long id);
+    Task<List<Usuario>?> GetUser();
+    Task<Usuario?> GetUser(long id);
 }

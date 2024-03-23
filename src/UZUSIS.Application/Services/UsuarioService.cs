@@ -5,17 +5,17 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Application.Services;
 
-public class AdminService : BaseService, IAdminService
+public class UsuarioService : BaseService, IUsuarioService
 {
     
-    public AdminService(Notification notification, IMapper mapper, IUsuarioRepository usuarioRepository) : base(notification, mapper)
+    public UsuarioService(Notification notification, IMapper mapper, IUsuarioRepository usuarioRepository) : base(notification, mapper)
     {
         _usuarioRepository = usuarioRepository;
     }
 
     private readonly IUsuarioRepository _usuarioRepository;
 
-    public async Task<List<Usuario>?> GetAdmin()
+    public async Task<List<Usuario>?> GetUser()
     {
         var list = await _usuarioRepository.Get();
 
@@ -24,7 +24,7 @@ public class AdminService : BaseService, IAdminService
         return list;
     }
 
-    public async Task<Usuario?> GetAdmin(long id)
+    public async Task<Usuario?> GetUser(long id)
     {
         var admin = await _usuarioRepository.Get(id);
         
