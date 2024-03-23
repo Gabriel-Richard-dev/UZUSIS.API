@@ -3,7 +3,7 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Domain.Validators;
 
-public class PessoaValidator : AbstractValidator<Pessoa>
+public class PessoaValidator : AbstractValidator<Usuario>
 {
     public PessoaValidator()
     {

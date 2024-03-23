@@ -4,7 +4,7 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Infra.Data.Mappings;
 
-public class AdminMap : EntityMap<Admin>
+public class UsuarioMap : EntityMap<Admin>
 {
     public void Configure(EntityTypeBuilder<Admin> builder)
     {

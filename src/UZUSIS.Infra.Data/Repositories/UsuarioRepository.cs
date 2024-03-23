@@ -4,9 +4,9 @@ using UZUSIS.Infra.Data.Context;
 
 namespace UZUSIS.Infra.Data.Repositories;
 
-public class AdminRepository : EntityRepository<Admin>, IAdminRepository
+public class UsuarioRepository : EntityRepository<Admin>, IAdminRepository
 {
-    public AdminRepository(UZUSISContext context) : base(context)
+    public UsuarioRepository(UZUSISContext context) : base(context)
     { }
     
 }

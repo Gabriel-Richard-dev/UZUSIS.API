@@ -2,9 +2,9 @@ using UZUSIS.Domain.Validators;
 
 namespace UZUSIS.Domain.Entities;
 
-public abstract class Pessoa : Entity
+public class Usuario  : Entity
 {
-    protected Pessoa(string photoUrl, string nome, string cpf, char genero,
+    public Usuario(string photoUrl, string nome, string cpf, char genero,
         string email, string password, string role, string tamanho, DateTime dataNascimento)
     {
         PhotoUrl = photoUrl;
@@ -18,7 +18,7 @@ public abstract class Pessoa : Entity
         DataNascimento = dataNascimento;
     }
 
-    protected Pessoa()
+    protected Usuario()
     {
         
     }
