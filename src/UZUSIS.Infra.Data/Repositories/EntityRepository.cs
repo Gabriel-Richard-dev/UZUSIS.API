@@ -6,7 +6,7 @@ using UZUSIS.Infra.Data.Context;
 
 namespace UZUSIS.Infra.Data.Repositories;
 
-public abstract class EntityRepository<T> : IEntityRepository<T> where T : Entity
+public abstract class EntityRepository<T> : IUnityOfWork, IEntityRepository<T> where T : Entity
 {
     protected EntityRepository(UZUSISContext context)
     {
@@ -16,7 +16,7 @@ public abstract class EntityRepository<T> : IEntityRepository<T> where T : Entit
 
     protected readonly UZUSISContext _context;
     private readonly DbSet<T> _dbSet;
-    private IUnityOfWork UnityOfWork => _context;
+    public IUnityOfWork UnityOfWork => _context;
     
     public virtual async Task<T> Create(T entity)
     {
@@ -54,4 +54,7 @@ public abstract class EntityRepository<T> : IEntityRepository<T> where T : Entit
         return returnEntity;
 
     }
+
+    public async Task<bool> Commit() => await _context.SaveChangesAsync() > 0;
+    
 }

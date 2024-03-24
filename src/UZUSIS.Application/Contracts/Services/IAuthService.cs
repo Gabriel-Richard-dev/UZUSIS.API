@@ -1,6 +1,6 @@
 namespace UZUSIS.Application.Contracts.Services;
 
-public interface IAuthService : IBaseService
+public interface IAuthService
 {
     Task<bool> isAuthenticationValid();
 }

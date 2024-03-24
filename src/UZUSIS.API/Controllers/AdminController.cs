@@ -10,8 +10,9 @@ namespace UZUSIS.API.Controllers;
 [Route("/admin")]
 public class AdminController : BaseController
 {
-    public AdminController(INotification notification) : base(notification)
+    public AdminController(INotification notification, IUsuarioService usuarioService) : base(notification)
     {
+        _usuarioService = usuarioService;
     }
 
     private readonly IUsuarioService _usuarioService;
@@ -22,7 +23,7 @@ public class AdminController : BaseController
     [Authorize(Roles = "admin")]
     public async Task<IActionResult> CadastarCliente()
     {
-        return CustomResponse();
+        return CustomResponse(await _usuarioService.Create());
     }
     
     [Route("cadastrar-admin")]
@@ -47,6 +48,9 @@ public class AdminController : BaseController
     {
         return CustomResponse();
     }
+    
+    
+    
     
     
     

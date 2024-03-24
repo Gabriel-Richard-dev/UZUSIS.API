@@ -9,4 +9,6 @@ public interface IEntityRepository<T> where T : Entity
     Task<T> Update(T entity);
     Task<List<T>>? Get();
     Task<T?> Get(long id);
+
+    IUnityOfWork UnityOfWork { get; }
 }

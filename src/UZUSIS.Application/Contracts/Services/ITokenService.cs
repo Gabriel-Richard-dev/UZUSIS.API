@@ -2,7 +2,7 @@ using UZUSIS.Application.DTO;
 
 namespace UZUSIS.Application.Contracts.Services;
 
-public interface ITokenService : IBaseService
+public interface ITokenService
 {
-    string GenerateToken(PessoaDTO pessoa);
+    string GenerateToken(UsuarioDTO usuario);
 }

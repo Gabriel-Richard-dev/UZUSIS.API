@@ -10,21 +10,17 @@ using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Application.Services;
 
-public class TokenService : BaseService, ITokenService
+public class TokenService : ITokenService
 {
-    public TokenService(Notification notification, IMapper mapper) : base(notification, mapper)
-    {
-    }
-
-    public string GenerateToken(PessoaDTO pessoa)
+    public string GenerateToken(UsuarioDTO usuario)
     {
         var key = Encoding.ASCII.GetBytes(UZUSIS.Domain.Keys.Key.Secret);
         var tokenConfig = new SecurityTokenDescriptor
         {
             Subject = new System.Security.Claims.ClaimsIdentity(new Claim[]
             {
-                new Claim("userId", pessoa.Id.ToString()),
-                new Claim(ClaimTypes.Role, pessoa.Role)
+                new Claim("userId", usuario.Id.ToString()),
+                new Claim(ClaimTypes.Role, usuario.Role)
             }),
             Expires = DateTime.UtcNow.AddHours(1),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

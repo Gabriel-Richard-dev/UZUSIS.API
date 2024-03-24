@@ -1,11 +1,22 @@
 using AutoMapper;
 using UZUSIS.Application.Contracts.Services;
+using UZUSIS.Domain.Contracts.Repositories;
+using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Application.Services;
 
-public class CarrinhoService : BaseService, ICarrinhoSevice
+public class CarrinhoService : BaseService<Carrinho>, ICarrinhoSevice
 {
-    public CarrinhoService(Notification notification, IMapper mapper) : base(notification, mapper)
+    public CarrinhoService(INotification notification, IMapper mapper,
+        ICarrinhoRepository carrinhoRepository) : base(notification, mapper, carrinhoRepository)
     {
+        _carrinhoRepository = carrinhoRepository;
     }
+
+    private readonly ICarrinhoRepository _carrinhoRepository;
+    
+    
+    
+    
+    
 }
