@@ -36,11 +36,18 @@ public abstract class EntityRepository<T> : IUnityOfWork, IEntityRepository<T> w
         return entity;
     }
 
-    public virtual async Task<List<T>>? Get()
+    public virtual async Task<List<T>?> Get()
     {
-        return await _dbSet
+        var list = await _dbSet
             .AsNoTrackingWithIdentityResolution()
             .ToListAsync();
+
+        if (list.Count == 0)
+        {
+            return null;
+        }
+
+        return list;
     }
 
     public virtual async Task<T?> Get(long id)

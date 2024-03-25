@@ -31,7 +31,7 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
     {
         var list = await _repository.Get();
         
-        if (list is null)
+        if (list[0] is null)
         {
             _notification.NotFound();
             return null;
