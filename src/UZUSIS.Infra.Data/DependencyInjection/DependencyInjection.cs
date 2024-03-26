@@ -13,7 +13,15 @@ public static class DependencyInjection
     public static void AddDependencyInjection(this IServiceCollection services)
     {
         services.AddScoped<INotification, Notification>();
+        
+        //services
+        
         services.AddScoped<IAuthService, AuthService>();
+        services.AddScoped<IUsuarioService, UsuarioService>();
+        services.AddScoped<IProdutoService, ProdutoService>();
+        
+        //repositories
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
+        services.AddScoped<IProdutoRepository, ProdutoRepository>();
     }
 }

@@ -8,7 +8,7 @@ namespace UZUSIS.Application.Services;
 public class CarrinhoService : BaseService<Carrinho>, ICarrinhoSevice
 {
     public CarrinhoService(INotification notification, IMapper mapper,
-        ICarrinhoRepository carrinhoRepository) : base(notification, mapper, carrinhoRepository)
+        ICarrinhoRepository carrinhoRepository) : base(notification, mapper)
     {
         _carrinhoRepository = carrinhoRepository;
     }

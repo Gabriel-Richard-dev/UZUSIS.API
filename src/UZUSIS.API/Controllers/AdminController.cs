@@ -23,7 +23,7 @@ public class AdminController : BaseController
     [Authorize(Roles = "admin")]
     public async Task<IActionResult> CadastarCliente()
     {
-        return CustomResponse(await _usuarioService.Create());
+        return CustomResponse();
     }
     
     [Route("cadastrar-admin")]

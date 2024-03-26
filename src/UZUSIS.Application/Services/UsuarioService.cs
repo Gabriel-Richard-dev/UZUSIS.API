@@ -10,13 +10,17 @@ namespace UZUSIS.Application.Services;
 public class UsuarioService : BaseService<Usuario>, IUsuarioService
 {
     
-    public UsuarioService(Notification notification, IMapper mapper,
-        IUsuarioRepository usuarioRepository) : base(notification, mapper, usuarioRepository)
+    public UsuarioService(INotification notification, IMapper mapper,
+        IUsuarioRepository usuarioRepository) : base(notification, mapper)
     {
         _usuarioRepository = usuarioRepository;
     }
     
     private readonly IUsuarioRepository _usuarioRepository;
+    
+    
+    
+    
     
 
 

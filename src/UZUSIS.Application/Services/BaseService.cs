@@ -7,7 +7,7 @@ namespace UZUSIS.Application.Services;
 
 public abstract class BaseService<T> : IBaseService<T> where T : Entity
 {
-    
+
     public BaseService(INotification notification, IMapper mapper,
         IEntityRepository<T> repository)
     {
@@ -20,7 +20,7 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
     protected readonly IMapper _mapper;
     private readonly IEntityRepository<T> _repository;
 
-    protected BaseService(Notification notification, IMapper mapper)
+    protected BaseService(INotification notification, IMapper mapper)
     {
         _notification = notification;
         _mapper = mapper;
@@ -30,10 +30,9 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
     public async Task<List<T>?> Get()
     {
         var list = await _repository.Get();
-        
-        if (list[0] is null)
+
+        if (!(await Existis(list.FirstOrDefault())))
         {
-            _notification.NotFound();
             return null;
         }
 
@@ -44,19 +43,25 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
     {
         var entity = await _repository.Get(id);
 
-        if (entity is null)
+        if(!(await Existis(entity)))
         {
-            _notification.NotFound();
             return null;
         }
 
+        
         return entity;
 
     }
 
-    public async Task<T> Create()
+    public async Task<T?> Create(T entity)
     {
-        // _repository.Create(new Usuario());
+        if ((await Existis(entity)))
+        {
+            _notification.AddNotification("Entidade já existente.");
+            return null;
+        }
+        
+        // _repository.Create(new Entity());
         if (await CommitChanges())
         {
             return null;
@@ -66,11 +71,11 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
         return null;
     }
 
-    public async Task<T> Update(T entity)
+    public async Task<T?> Update(T entity)
     {
         var entityExists = await _repository.Get(entity.Id);
-        
-        if(entityExists is not null)
+
+        if ((await Existis(entity)))
         {
             await _repository.Update(entity);
 
@@ -81,27 +86,36 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
 
             _notification.AddNotification("Não foi possível atualizar o usuário");
         }
-
-        _notification.NotFound();
+        
         return null;
     }
 
     public async Task Remove(T entity)
     {
-        var entityExists = await Get(entity.Id);
-
-        if (entityExists is null)
+        if (!(await Existis(entity)))
         {
-            _notification.NotFound();
-            return;
+            await _repository.Delete(entity);
         }
-
-        await _repository.Delete(entity);
-
     }
 
 
-    public async Task<bool> CommitChanges()
+    public async Task<bool> Existis(T entity)
+    {
+        
+        var entityExists = await Get(entity.Id);
+        
+        if (entityExists is null)
+        {
+            _notification.NotFound();
+            return false;
+        }
+
+        return true;
+    } 
+  
+
+
+public async Task<bool> CommitChanges()
     {
         if (await _repository.UnityOfWork.Commit())
             return true;
