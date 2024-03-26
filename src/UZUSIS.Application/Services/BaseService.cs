@@ -54,11 +54,7 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
         return entity;
 
     }
-
-    public Task<T?> Create(T entity)
-    {
-        throw new NotImplementedException();
-    }
+    
 
     public virtual async Task<T?> Create<DTO>(DTO entitydto) where DTO : BaseDTO
     {

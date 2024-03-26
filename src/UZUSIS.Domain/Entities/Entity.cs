@@ -1,4 +1,5 @@
 using UZUSIS.Domain.Contracts;
+using UZUSIS.Domain.Validators;
 
 namespace UZUSIS.Domain.Entities;
 
@@ -11,7 +12,19 @@ public abstract class Entity : IEntity
     
     public List<string?>? Validate()
     {
-        throw new NotImplementedException();
+        var validator = new EntityValidator();
+        var validatorResult = validator.Validate(this);
+
+        if (validatorResult is not null)
+            return null;
+        
+        var listErros = validatorResult?.Errors.ToList();
+        List<string?>? stringListErros = new();
+        
+        listErros?.ForEach(erro => stringListErros.Add(erro.ToString()));
+        
+        return stringListErros;
+
     }
 
     

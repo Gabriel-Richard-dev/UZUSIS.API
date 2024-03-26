@@ -22,7 +22,8 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
         
         var list = await _produtoRepository.Get();
 
-        var listNomes = list.Where(p => p.Nome.ToLower().Contains(parseName)).ToList();
+        var listNomes = list.Where(p => p.Nome
+            .ToLower().Contains(parseName)).ToList();
 
         return listNomes;
     }

@@ -1,8 +1,9 @@
-﻿using UZUSIS.Domain.Enumerations;
+﻿using UZUSIS.Domain.Contracts;
+using UZUSIS.Domain.Enumerations;
 
 namespace UZUSIS.Domain.Entities;
 
-public class Feedback
+public class Feedback : Entity
 {
     public Produto Produto { get; set; }
     public Usuario Cliente { get; set; }
