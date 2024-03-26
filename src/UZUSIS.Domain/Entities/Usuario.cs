@@ -1,3 +1,4 @@
+using UZUSIS.Core.Criptografy;
 using UZUSIS.Domain.Validators;
 
 namespace UZUSIS.Domain.Entities;
@@ -16,6 +17,9 @@ public class Usuario  : Entity
         Role = role;
         Tamanho = tamanho;
         DataNascimento = dataNascimento;
+        
+        Validate();
+        CriptografyPass();
     }
 
     protected Usuario()
@@ -46,6 +50,13 @@ public class Usuario  : Entity
     {
         Password = newpass;
         Validate();
+        CriptografyPass();
+    }
+
+
+    public void CriptografyPass()
+    {
+        Password = Password.HashPassword();
     }
 
 

@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 
 
-namespace UZUSIS.Application.Criptografy;
+namespace UZUSIS.Core.Criptografy;
 
 public static class Criptografy
 {

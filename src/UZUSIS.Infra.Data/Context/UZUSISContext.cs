@@ -26,8 +26,6 @@ public class UZUSISContext : DbContext, IUnityOfWork
     private DbSet<Carrinho> Carrinhos { get; set; }
     private DbSet<Produto> Produtos { get; set; }
     private DbSet<Pagamento> Payments { get; set; }
-
-    
     
     
     protected override void OnModelCreating(ModelBuilder builder)

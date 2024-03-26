@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\UZUSIS.API.props" />
+  <Import Project="../build/UZUSIS.API.props" />
 </Project>

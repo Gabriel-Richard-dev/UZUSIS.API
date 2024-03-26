@@ -593,9 +593,15 @@
           "UZUSIS.Application.dll": {}
         }
       },
+      "UZUSIS.Core/1.0.0": {
+        "runtime": {
+          "UZUSIS.Core.dll": {}
+        }
+      },
       "UZUSIS.Domain/1.0.0": {
         "dependencies": {
-          "FluentValidation": "11.9.0"
+          "FluentValidation": "11.9.0",
+          "UZUSIS.Core": "1.0.0"
         },
         "runtime": {
           "UZUSIS.Domain.dll": {}
@@ -946,6 +952,11 @@
       "hashPath": "system.threading.channels.6.0.0.nupkg.sha512"
     },
     "UZUSIS.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UZUSIS.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

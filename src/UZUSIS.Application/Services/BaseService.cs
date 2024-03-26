@@ -1,5 +1,7 @@
 using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using UZUSIS.Application.Contracts.Services;
+using UZUSIS.Application.DTO;
 using UZUSIS.Domain.Contracts.Repositories;
 using UZUSIS.Domain.Entities;
 
@@ -53,28 +55,36 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
 
     }
 
-    public async Task<T?> Create(T entity)
+    public Task<T?> Create(T entity)
     {
+        throw new NotImplementedException();
+    }
+
+    public virtual async Task<T?> Create<DTO>(DTO entitydto) where DTO : BaseDTO
+    {
+        var entity = _mapper.Map<T>(entitydto);
+        entity.Validate();
+        
         if ((await Existis(entity)))
         {
-            _notification.AddNotification("Entidade já existente.");
+            _notification.AddNotification($"{typeof(T)} já existente.");
             return null;
         }
         
-        // _repository.Create(new Entity());
+        await _repository.Create(entity);
         if (await CommitChanges())
         {
             return null;
         }
 
-        _notification.AddNotification("Service: Não foi possível criar o usuário");
+        _notification.AddNotification($"Service: Não foi possível criar {typeof(T)}");
         return null;
     }
 
     public async Task<T?> Update(T entity)
     {
         var entityExists = await _repository.Get(entity.Id);
-
+        
         if ((await Existis(entity)))
         {
             await _repository.Update(entity);

@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using UZUSIS.Application;
 using UZUSIS.Application.Contracts.Services;
-using UZUSIS.Application.Criptografy;
+using UZUSIS.Core.Criptografy;
 using UZUSIS.Application.DTO;
 
 namespace UZUSIS.API.Controllers;
 [ApiController]
-[Route("/auth")]
+[Route("[controller]")]
 public class AuthController : BaseController
 {
     public AuthController(INotification notification, IAuthService authenticationService) : base(notification)

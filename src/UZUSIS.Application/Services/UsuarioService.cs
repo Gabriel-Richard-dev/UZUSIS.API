@@ -17,8 +17,7 @@ public class UsuarioService : BaseService<Usuario>, IUsuarioService
     }
     
     private readonly IUsuarioRepository _usuarioRepository;
-    
-    
+
     
     
     

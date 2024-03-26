@@ -7,7 +7,7 @@ using UZUSIS.Application.DTO;
 
 namespace UZUSIS.API.Controllers;
 [ApiController]
-[Route("/admin")]
+[Route("[controller]")]
 public class AdminController : BaseController
 {
     public AdminController(INotification notification, IUsuarioService usuarioService) : base(notification)

@@ -12,7 +12,7 @@ public static class AutoMapperConfiguration
      {
           var AutoMapperConfig = new MapperConfiguration(options =>
           {
-               options.CreateMap<Usuario, ClienteDTO>().ReverseMap();
+               options.CreateMap<Usuario, UsuarioDTO>().ReverseMap();
           });
           services.AddSingleton(AutoMapperConfig.CreateMapper());
      }
