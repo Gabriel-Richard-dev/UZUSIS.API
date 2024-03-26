@@ -10,13 +10,15 @@ namespace UZUSIS.API.Controllers;
 [Route("[controller]")]
 public class AdminController : BaseController
 {
-    public AdminController(INotification notification, IUsuarioService usuarioService) : base(notification)
+    public AdminController(INotification notification, IUsuarioService usuarioService, IProdutoService produtoService) : base(notification)
     {
         _usuarioService = usuarioService;
+        _produtoService = produtoService;
+
     }
 
     private readonly IUsuarioService _usuarioService;
-    
+    private readonly IProdutoService _produtoService;
     
     [Route("cadastrar-cliente")]
     [HttpPost]
@@ -42,12 +44,7 @@ public class AdminController : BaseController
         return CustomResponse();
     }
 
-    [Route("produtos")]
-    [HttpGet]
-    public async Task<IActionResult> GetProdutos()
-    {
-        return CustomResponse();
-    }
+  
     
     
     
