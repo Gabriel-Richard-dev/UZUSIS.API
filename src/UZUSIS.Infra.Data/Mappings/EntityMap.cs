@@ -16,8 +16,11 @@ public abstract class EntityMap<T> : IEntityTypeConfiguration<T> where T : Entit
 
         builder.Property(e => e.DataCriacao)
             .IsRequired()
-            .HasColumnType("SMALLDATETIME");
+            .HasColumnType("DATE")
+            .HasDefaultValue(DateTime.Now.ToString("yyyy/MM/dd"));
+
         builder.Property(e => e.DataAtualizacao)
-            .HasColumnType("SMALLDATETIME");
+            .HasColumnType("DATETIME")
+            .HasDefaultValue(DateTime.Now);
     }
 }

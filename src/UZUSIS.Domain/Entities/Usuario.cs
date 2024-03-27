@@ -5,10 +5,10 @@ namespace UZUSIS.Domain.Entities;
 
 public class Usuario  : Entity
 {
-    public Usuario(string photoUrl, string nome, string cpf, char genero,
+    public Usuario(byte[]? photoBytes, string nome, string cpf, char genero,
         string email, string password, string role, string tamanho, DateTime dataNascimento)
     {
-        PhotoUrl = photoUrl;
+        PhotoBytes = photoBytes;
         Nome = nome;
         CPF = cpf;
         Genero = genero;
@@ -27,7 +27,7 @@ public class Usuario  : Entity
         
     }
 
-    public string PhotoUrl { get; set; }
+    public byte[]? PhotoBytes { get; set; }
     public string Nome { get; private set; }
     public string CPF { get; set; }
     
@@ -55,7 +55,7 @@ public class Usuario  : Entity
 
 
     public void CriptografyPass()
-    {
+    {   
         Password = Password.HashPassword();
     }
 

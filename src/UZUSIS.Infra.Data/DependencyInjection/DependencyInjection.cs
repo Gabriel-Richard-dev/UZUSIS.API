@@ -20,12 +20,18 @@ public static class DependencyInjection
         services.AddScoped<IUsuarioService, UsuarioService>();
         services.AddScoped<IProdutoService, ProdutoService>();
         services.AddScoped<IPagamentoService, PagamentoService>();
+        services.AddScoped<IFeedbackService, FeedbackService>();
+        services.AddScoped<ICarrinhoProdutoService, CarrinhoProdutoService>();
+        services.AddScoped<ICarrinhoSevice, CarrinhoService>();
         
         //repositories
         
         services.AddScoped<IUsuarioRepository, UsuarioRepository>();
         services.AddScoped<IProdutoRepository, ProdutoRepository>();
         services.AddScoped<IPagamentoRepository, PagamentoRepository>();
+        services.AddScoped<IFeedbackRepository, FeedbackRepository>();
+        services.AddScoped<ICarrinhoProdutoRepository, CarrinhoProdutoRepository>();
+        services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
         
     }
 }

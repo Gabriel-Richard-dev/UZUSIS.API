@@ -8,33 +8,58 @@ public class UsuarioMap : EntityMap<Usuario>
 {
     public void Configure(EntityTypeBuilder<Usuario> builder)
     {
-        builder.ToTable("Admin");
+        builder.ToTable("Usuario");
+
+        builder.HasKey(u => u.Id);
         
-        builder.Property(a => a.Nome)
+        builder.Property(u => u.PhotoBytes)
+            .HasColumnType("IMAGE");
+        
+        builder.Property(u => u.Nome)
             .IsRequired()
             .HasColumnType("VARCHAR(80)");
 
-        builder.Property(a => a.Role)
+        builder.HasIndex(u => u.CPF)
+            .IsUnique();
+
+        builder.Property(u => u.CPF)
             .IsRequired()
-            .HasDefaultValue("Admin")
             .HasColumnType("VARCHAR(11)");
-        
-        builder.Property(a => a.Email)
+
+        builder.Property(u => u.Genero)
+            .IsRequired()
+            .HasColumnType("CHAR");
+
+        builder.Property(u => u.Email)
             .IsRequired()
             .HasColumnType("VARCHAR(180)");
         
-        builder.HasIndex(a => a.Email)
+        builder.HasIndex(u => u.Email)
             .IsUnique();
-
-        builder.HasIndex(a => a.CPF)
-            .IsUnique();
-
-        builder.Property(a => a.CPF)
-            .IsRequired()
-            .HasColumnType("VARCHAR(11)");
-
-        builder.Property(a => a.Password)
+        
+        builder.Property(u => u.Password)
             .IsRequired();
+        
+        builder.Property(u => u.Role)
+            .IsRequired()
+            .HasDefaultValue("cliente")
+            .HasColumnType("VARCHAR(11)");
+        
+        builder.Property(u => u.Tamanho)
+            .IsRequired()
+            .HasColumnType("VARCHAR(2)");
+        builder.Property(u => u.DataNascimento)
+            .IsRequired()
+            .HasColumnType("DATE");
 
+        builder.Property(u => u.DataCriacao)
+            .IsRequired()
+            .HasColumnType("DATE")
+            .HasDefaultValue(DateTime.Now.ToString("yyyy/MM/dd"));
+
+        builder.Property(u => u.DataAtualizacao)
+            .HasColumnType("DATETIME")
+            .HasDefaultValue(DateTime.Now);
+        
     }
 }
