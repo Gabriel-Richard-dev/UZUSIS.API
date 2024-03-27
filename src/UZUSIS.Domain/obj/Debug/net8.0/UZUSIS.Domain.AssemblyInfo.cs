@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UZUSIS.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+100cb718aa10dc4347be63e65d2d066e272f226a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5331d65540e2e50af654e5e9f71130fc038cc650")]
 [assembly: System.Reflection.AssemblyProductAttribute("UZUSIS.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UZUSIS.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

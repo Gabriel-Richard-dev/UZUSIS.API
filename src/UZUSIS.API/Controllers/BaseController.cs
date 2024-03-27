@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using UZUSIS.Application;
+using UZUSIS.Core.ViewModel;
 
 namespace UZUSIS.API.Controllers;
 [ApiController]
@@ -18,7 +19,12 @@ public abstract class BaseController : ControllerBase
     {
         if (ValidOperation)
         {
-            return Ok(result);
+            return Ok(new ResultViewModel()
+            {
+                Message = "Result request",
+                Success = true,
+                Data = result!
+            });
         }
 
         if (_notification.notFound)
@@ -27,7 +33,12 @@ public abstract class BaseController : ControllerBase
         }
 
         return BadRequest(
-            error: _notification.GetNotifications().ToList()
+            error: new ResultViewModel()
+            {
+                Message = "Result request unsuccessfully",
+                Success = false,
+                Data = _notification.GetNotifications().ToList()
+            }
         );
 
     }
