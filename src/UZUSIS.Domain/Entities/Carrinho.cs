@@ -30,5 +30,16 @@ public class Carrinho : Entity
             Produtos.Remove(p);
         }
     }
+
+    public decimal ValorTotal()
+    {
+        decimal total = 0m;
+        foreach (var produto in Produtos)
+        {
+            total += produto.Preco;
+        }
+
+        return total;
+    }
     
 }

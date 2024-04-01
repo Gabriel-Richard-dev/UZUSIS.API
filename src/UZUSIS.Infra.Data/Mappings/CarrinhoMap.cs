@@ -10,9 +10,30 @@ public class CarrinhoMap : EntityMap<Carrinho>
     {
 
         builder.ToTable("Carrinho");
+
+        builder.HasKey(c => c.Id);
         
         builder
             .HasMany(c => c.Produtos);
+
+        builder
+            .HasOne(c => c.Cliente);
+        
+        builder.Property(c => c.UserId)
+            .HasColumnType("BIGINT");
+
+        builder.Property(c => c.valorTotal)
+            .HasColumnType("DECIMAL(10,2)");
+        
+        builder.Property(u => u.DataCriacao)
+            .IsRequired()
+            .HasColumnType("DATE")
+            .HasDefaultValue(DateTime.Now.ToString("yyyy/MM/dd"));
+
+        builder.Property(u => u.DataAtualizacao)
+            .HasColumnType("DATETIME")
+            .HasDefaultValue(DateTime.Now);
+
 
     }
 }

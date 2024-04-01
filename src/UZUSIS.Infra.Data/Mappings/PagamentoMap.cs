@@ -14,6 +14,15 @@ public class PagamentoMap : EntityMap<Pagamento>
         builder
             .HasMany(p => p.Produtos);
         
+   
+        builder.Property(u => u.DataCriacao)
+            .IsRequired()
+            .HasColumnType("DATE")
+            .HasDefaultValue(DateTime.Now.ToString("yyyy/MM/dd"));
+
+        builder.Property(u => u.DataAtualizacao)
+            .HasColumnType("DATETIME")
+            .HasDefaultValue(DateTime.Now);
 
     }
 }
