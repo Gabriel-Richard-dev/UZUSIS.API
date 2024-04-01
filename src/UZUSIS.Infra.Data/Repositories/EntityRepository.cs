@@ -50,6 +50,12 @@ public abstract class EntityRepository<T> : IUnityOfWork, IEntityRepository<T> w
         return list;
     }
 
+    public virtual async Task<long?> Get(T entity)
+    {
+        return _dbSet.FindAsync(entity).Result.Id;
+    }
+    
+
     public virtual async Task<T?> Get(long id)
     {
         var list = (await Get());

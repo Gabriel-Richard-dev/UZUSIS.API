@@ -1,5 +1,6 @@
 using AutoMapper;
 using UZUSIS.Application.Contracts.Services;
+using UZUSIS.Application.DTO;
 using UZUSIS.Domain.Contracts.Repositories;
 using UZUSIS.Domain.Entities;
 
@@ -14,9 +15,16 @@ public class CarrinhoService : BaseService<Carrinho>, ICarrinhoSevice
     }
 
     private readonly ICarrinhoRepository _carrinhoRepository;
-    
-    
-   
-    
-    
+
+    public async Task<Carrinho?> CreateCarrinho(Usuario user)
+    {
+        var carrinho = new CarrinhoDTO()
+        {
+            Cliente = user,
+            UserId = user.Id
+        };
+
+        return await Create(carrinho);
+
+    }
 }

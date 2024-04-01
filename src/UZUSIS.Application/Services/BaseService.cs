@@ -104,7 +104,6 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
         }
     }
 
-
     public async Task<bool> Existis(T entity)
     {
         
@@ -117,11 +116,11 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
         }
 
         return true;
-    } 
-  
+    }
 
-
-public async Task<bool> CommitChanges()
+    
+    
+    public virtual async Task<bool> CommitChanges()
     {
         if (await _repository.UnityOfWork.Commit())
             return true;

@@ -5,6 +5,7 @@ using UZUSIS.Core.ViewModel;
 
 namespace UZUSIS.API.Controllers;
 [ApiController]
+
 public abstract class BaseController : ControllerBase
 {
     private readonly INotification _notification;

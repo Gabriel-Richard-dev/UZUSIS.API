@@ -8,6 +8,7 @@ public interface IEntityRepository<T> where T : Entity
     Task Delete(T entity);
     Task<T> Update(T entity);
     Task<List<T>?> Get();
+    Task<long?> Get(T entity);
     Task<T?> Get(long id);
 
     IUnityOfWork UnityOfWork { get; }

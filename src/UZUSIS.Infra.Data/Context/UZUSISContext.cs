@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
 using UZUSIS.Domain.Contracts;
 using UZUSIS.Domain.Entities;
 using UZUSIS.Infra.Data.Mappings;
