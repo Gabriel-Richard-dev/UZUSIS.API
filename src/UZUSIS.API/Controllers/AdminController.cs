@@ -23,46 +23,38 @@ public class AdminController : BaseController
     private readonly IProdutoService _produtoService;
     private readonly ICarrinhoSevice _carrinhoSevice;
     
+    
     [Route("cadastrar-cliente")]
     [HttpPost]
     [Authorize(Roles = "admin")]
     public async Task<IActionResult> CadastarCliente(UsuarioDTO dto)
     {
+        dto.Role = "cliente";
         var userCreated = await _usuarioService.Create(dto);
-        await _carrinhoSevice.CreateCarrinho(userCreated!);
-        return CustomResponse();
+        var carrinhoCreated = await _carrinhoSevice.CreateCarrinho(userCreated);
+        return CustomResponse(new Object[] {userCreated!, carrinhoCreated!});
         
     }
     
     [Route("cadastrar-admin")]
     [HttpPost]
     [Authorize(Roles = "admin")]
-    public async Task<IActionResult> CadastrarAdmin()
+    public async Task<IActionResult> CadastrarAdmin(UsuarioDTO dto)
     {
-        return CustomResponse();
+        dto.Role = "admin";
+        var userCreated = await _usuarioService.Create(dto);
+        return CustomResponse(userCreated);
     }
 
     [Route("cadastrar-produto")]
     [HttpPost]
     [Authorize(Roles = "admin")]
-    public async Task<IActionResult> CadastrarProduto()
+    public async Task<IActionResult> CadastrarProduto(ProdutoDTO dto)
     {
-        return CustomResponse();
+        return CustomResponse(await _produtoService.Create(dto));
     }
 
-  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     
     
     

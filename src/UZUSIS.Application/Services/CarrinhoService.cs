@@ -16,8 +16,16 @@ public class CarrinhoService : BaseService<Carrinho>, ICarrinhoSevice
 
     private readonly ICarrinhoRepository _carrinhoRepository;
 
-    public async Task<Carrinho?> CreateCarrinho(Usuario user)
+    public async Task<Carrinho?> CreateCarrinho(Usuario? user)
     {
+
+        if (user is null)
+        {
+            _notification.NotFound();
+            return null;
+        }
+        
+        
         var carrinho = new CarrinhoDTO()
         {
             Cliente = user,

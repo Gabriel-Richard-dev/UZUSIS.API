@@ -27,4 +27,12 @@ public class UsuarioController : BaseController
     {
         return CustomResponse(await _usuarioService.Create(new UsuarioDTO()));
     }
+    
+    
+    
+    
+    
+    
+    
+    
 }
