@@ -20,10 +20,10 @@ public class UZUSISContext : DbContext, IUnityOfWork
         options.EnableDetailedErrors();
     }
     
-    private DbSet<Usuario> Usuarios { get; set; }
-    private DbSet<Carrinho> Carrinhos { get; set; }
-    private DbSet<Produto> Produtos { get; set; }
-    private DbSet<Pagamento> Payments { get; set; }
+    public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<Carrinho> Carrinhos { get; set; }
+    public DbSet<Produto> Produtos { get; set; }
+    public DbSet<Pagamento> Payments { get; set; }
     
     
     protected override void OnModelCreating(ModelBuilder builder)

@@ -19,7 +19,7 @@ public class CarrinhoMap : EntityMap<Carrinho>
         builder
             .HasOne(c => c.Cliente);
         
-        builder.Property(c => c.UserId)
+        builder.Property(c => c.Cliente.Id)
             .HasColumnType("BIGINT");
 
         builder.Property(c => c.valorTotal)

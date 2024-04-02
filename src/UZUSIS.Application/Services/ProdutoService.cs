@@ -8,12 +8,15 @@ namespace UZUSIS.Application.Services;
 public class ProdutoService : BaseService<Produto>, IProdutoService 
 {
 
-    public ProdutoService(INotification notification, IMapper mapper, IProdutoRepository produtoRepository) : base(notification, mapper)
+    public ProdutoService(INotification notification, IMapper mapper,
+        IProdutoRepository produtoRepository, IGrupoRepository grupoRepository) : base(notification, mapper)
     {
         _produtoRepository = produtoRepository;
+        _grupoRepository = grupoRepository;
     }
 
     private readonly IProdutoRepository _produtoRepository;
+    private readonly IGrupoRepository _grupoRepository;
 
 
     public async Task<List<Produto>> Get(string parseName)
@@ -27,9 +30,31 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
 
         return listNomes;
     }
-    
-    
-    
+    public async Task<List<Produto>?> GetGroup(string identificadorGrupo)
+    {
+        var list = await _produtoRepository.Get(identificadorGrupo);
+        return list;
+    }
+
+
+    public async Task<List<List<Produto>>?> GetGroup()
+    {
+        var groups = await _grupoRepository.Get();
+        List<List<Produto>> Grupos = new();
+        
+        foreach (var grupo in groups)
+        {
+            var listGrupo = await GetGroup(grupo.IdentificadorGrupo);
+            if (listGrupo is null)
+            {
+                _notification.NotFound();
+                return null;
+            }
+            Grupos.Add(listGrupo);
+        }
+
+        return Grupos;
+    }
     
     
     

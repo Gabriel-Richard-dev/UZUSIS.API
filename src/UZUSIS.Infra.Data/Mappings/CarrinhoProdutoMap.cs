@@ -13,6 +13,13 @@ public class CarrinhoProdutoMap : EntityMap<CarrinhoProduto>
         builder.HasKey(c => c.Id);
 
         builder.HasOne(c => c.Carrinho);
+
+        builder.HasOne(c => c.Produto);
+
+
+        builder.Property(c => c.Carrinho.Id);
+        builder.Property(c => c.Produto.Id);
+        
         
         builder.Property(c => c.DataCriacao)
             .IsRequired()

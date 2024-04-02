@@ -2,7 +2,6 @@
 
 public class CarrinhoProduto : Entity
 {
-    
     public Carrinho Carrinho { get; set; }
     public Produto Produto { get; set; }
 }

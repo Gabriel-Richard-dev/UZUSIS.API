@@ -15,8 +15,7 @@ public class ProdutoMap : EntityMap<Produto>
             .ValueGeneratedOnAdd()
             .HasColumnType("BIGINT");
 
-        builder.Property(p => p.PhotoUrl)
-            .HasColumnType("IMAGE");
+        builder.Property(p => p.Photo64);
 
         builder.Property(p => p.Nome)
             .IsRequired()
