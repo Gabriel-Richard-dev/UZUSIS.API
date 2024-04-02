@@ -34,8 +34,11 @@ public class ProdutoController : BaseController
     {
         return CustomResponse(await _grupoService.Create(dto));
     }
-    
+
     [HttpGet]
     [Route("search")]
     public async Task<IActionResult> Search()
+    {
+        return CustomResponse(await _grupoService.Get());
+    }
 }
