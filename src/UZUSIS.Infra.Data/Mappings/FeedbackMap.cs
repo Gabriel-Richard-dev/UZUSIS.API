@@ -6,7 +6,7 @@ namespace UZUSIS.Infra.Data.Mappings;
 
 public class FeedbackMap : EntityMap<Feedback>
 {
-    public FeedbackMap(EntityTypeBuilder<Feedback> builder)
+    public void Configure(EntityTypeBuilder<Feedback> builder)
     {
 
         builder.ToTable("Feedback");

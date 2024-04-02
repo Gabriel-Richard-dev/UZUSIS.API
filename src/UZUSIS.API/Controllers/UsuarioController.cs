@@ -21,17 +21,6 @@ public class UsuarioController : BaseController
     {
         return CustomResponse("oi");
     }
-    [HttpPost]
-    [Route("criar")]
-    public async Task<IActionResult> CriarUsuario()
-    {
-        return CustomResponse(await _usuarioService.Create(new UsuarioDTO()));
-    }
-    
-    
-    
-    
-    
     
     
     

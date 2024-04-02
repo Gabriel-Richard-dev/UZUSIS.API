@@ -1,22 +1,25 @@
-using System.Collections.Immutable;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using UZUSIS.Domain.Entities;
 
 namespace UZUSIS.Infra.Data.Mappings;
 
-public class FavoritoMap : EntityMap<Favorito>
+public class GrupoMap : EntityMap<Grupo>
 {
-    public void Configure(EntityTypeBuilder<Favorito> builder)
+    public void Configure(EntityTypeBuilder<Grupo> builder)
     {
+        
+        builder.ToTable("Grupo");
 
-        builder.ToTable("Favorito");
+        builder.HasKey(g => g.Id);
 
-        builder.HasOne(c => c.Cliente);
-
-        builder.HasMany<Produto>(c => c.Produtos);
-
-   
+        builder.Property(g => g.IdentificadorGrupo)
+            .IsRequired()
+            .HasColumnType("VARCHAR(100)");
+            
+        builder.HasIndex(g => g.IdentificadorGrupo)
+            .IsUnique(true);
+        
         builder.Property(u => u.DataCriacao)
             .IsRequired()
             .HasColumnType("DATE")
@@ -25,9 +28,5 @@ public class FavoritoMap : EntityMap<Favorito>
         builder.Property(u => u.DataAtualizacao)
             .HasColumnType("DATETIME")
             .HasDefaultValue(DateTime.Now);
-
-
     }
-    
-    
 }

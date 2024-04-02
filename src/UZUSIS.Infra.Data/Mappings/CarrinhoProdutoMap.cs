@@ -6,7 +6,7 @@ namespace UZUSIS.Infra.Data.Mappings;
 
 public class CarrinhoProdutoMap : EntityMap<CarrinhoProduto>
 {
-    public CarrinhoProdutoMap(EntityTypeBuilder<CarrinhoProduto> builder)
+    public void Configure(EntityTypeBuilder<CarrinhoProduto> builder)
     {
         builder.ToTable("CarrinhoProduto");
 

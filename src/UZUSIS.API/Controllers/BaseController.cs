@@ -14,8 +14,7 @@ public abstract class BaseController : ControllerBase
     {
         _notification = notification;
     }
-
-
+    
     protected ActionResult CustomResponse(object? result = null)
     {
         if (ValidOperation)
@@ -24,7 +23,7 @@ public abstract class BaseController : ControllerBase
             {
                 Message = "Result request",
                 Success = true,
-                Data = result!
+                Data = result
             });
         }
 

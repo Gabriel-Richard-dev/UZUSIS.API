@@ -27,4 +27,6 @@ public class Produto : Entity
     public string IdentificadorGrupo { get; set; }
     
     public decimal Preco { get; set; }
+
+    public bool isEsgotado { get; set; }
 }

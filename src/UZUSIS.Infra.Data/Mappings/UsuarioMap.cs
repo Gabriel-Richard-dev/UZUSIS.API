@@ -12,7 +12,7 @@ public class UsuarioMap : EntityMap<Usuario>
 
         builder.HasKey(u => u.Id);
         
-        builder.Property(u => u.PhotoBytes)
+        builder.Property(u => u.Photo64)
             .HasColumnType("IMAGE");
         
         builder.Property(u => u.Nome)

@@ -45,17 +45,5 @@ public class AdminController : BaseController
         var userCreated = await _usuarioService.Create(dto);
         return CustomResponse(userCreated);
     }
-
-    [Route("cadastrar-produto")]
-    [HttpPost]
-    [Authorize(Roles = "admin")]
-    public async Task<IActionResult> CadastrarProduto(ProdutoDTO dto)
-    {
-        return CustomResponse(await _produtoService.Create(dto));
-    }
-
-
-    
-    
     
 }

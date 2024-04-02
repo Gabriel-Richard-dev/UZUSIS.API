@@ -24,6 +24,7 @@ public class UZUSISContext : DbContext, IUnityOfWork
     public DbSet<Carrinho> Carrinhos { get; set; }
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Pagamento> Payments { get; set; }
+    public DbSet<Pagamento> Grupos { get; set; }
     
     
     protected override void OnModelCreating(ModelBuilder builder)
@@ -31,8 +32,11 @@ public class UZUSISContext : DbContext, IUnityOfWork
       
         builder.ApplyConfiguration(new UsuarioMap());
         builder.ApplyConfiguration(new CarrinhoMap());
+        builder.ApplyConfiguration(new CarrinhoProdutoMap());
         builder.ApplyConfiguration(new ProdutoMap());
+        builder.ApplyConfiguration(new GrupoMap());
         builder.ApplyConfiguration(new PagamentoMap());
+        builder.ApplyConfiguration(new FeedbackMap());
     }
     
     

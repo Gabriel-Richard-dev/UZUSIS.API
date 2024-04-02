@@ -19,16 +19,27 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
     private readonly IGrupoRepository _grupoRepository;
 
 
-    public async Task<List<Produto>> Get(string parseName)
+    public async Task<List<List<Produto>>?> Get(string parseName)
     {
         parseName = parseName.Trim().ToLower();
         
-        var list = await _produtoRepository.Get();
+        var listGroups = await GetGroup();
+        List<List<Produto>> Grupos = new();
+        
+        foreach (var grupos in listGroups)
+        {
+            foreach (var produto in grupos)
+            {
+                if (produto.Nome.ToLower().Contains(parseName))
+                {
+                    Grupos.Add(grupos);
+                    break;
+                }
+            } 
+        }
 
-        var listNomes = list.Where(p => p.Nome
-            .ToLower().Contains(parseName)).ToList();
+        return Grupos;
 
-        return listNomes;
     }
     public async Task<List<Produto>?> GetGroup(string identificadorGrupo)
     {
@@ -40,7 +51,7 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
     public async Task<List<List<Produto>>?> GetGroup()
     {
         var groups = await _grupoRepository.Get();
-        List<List<Produto>> Grupos = new();
+        List<List<Produto>> Grupos = new List<List<Produto>>();
         
         foreach (var grupo in groups)
         {
@@ -55,7 +66,6 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
 
         return Grupos;
     }
-    
     
     
 }
