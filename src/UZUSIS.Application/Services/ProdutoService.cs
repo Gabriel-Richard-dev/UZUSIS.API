@@ -51,7 +51,7 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
     public async Task<List<List<Produto>>?> GetGroup()
     {
         var groups = await _grupoRepository.Get();
-        List<List<Produto>> Grupos = new List<List<Produto>>();
+        List<List<Produto>>? Grupos = new List<List<Produto>>();
         
         foreach (var grupo in groups)
         {

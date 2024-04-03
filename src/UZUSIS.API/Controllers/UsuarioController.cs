@@ -15,12 +15,9 @@ public class UsuarioController : BaseController
 
     private readonly IUsuarioService _usuarioService;
     
-    [HttpGet]
-    [Route("adicionar-ao-carrinho")]
-    public async Task<IActionResult> AdicionarAoCarrinho()
-    {
-        return CustomResponse("oi");
-    }
+   
+    
+    
     
     
     

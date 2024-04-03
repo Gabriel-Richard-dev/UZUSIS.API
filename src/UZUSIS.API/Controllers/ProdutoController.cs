@@ -36,9 +36,9 @@ public class ProdutoController : BaseController
     }
 
     [HttpGet]
-    [Route("search")]
-    public async Task<IActionResult> Search()
+    [Route("search/{parseName}")]
+    public async Task<IActionResult> Search(string parseName)
     {
-        return CustomResponse(await _grupoService.Get());
+        return CustomResponse(await _produtoService.Get(parseName));
     }
 }

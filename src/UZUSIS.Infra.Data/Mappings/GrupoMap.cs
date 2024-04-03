@@ -8,7 +8,6 @@ public class GrupoMap : EntityMap<Grupo>
 {
     public void Configure(EntityTypeBuilder<Grupo> builder)
     {
-        
         builder.ToTable("Grupo");
 
         builder.HasKey(g => g.Id);
@@ -16,7 +15,9 @@ public class GrupoMap : EntityMap<Grupo>
         builder.Property(g => g.IdentificadorGrupo)
             .IsRequired()
             .HasColumnType("VARCHAR(100)");
-            
+
+        builder.HasMany<Produto>(p => p.Produtos);
+        
         builder.HasIndex(g => g.IdentificadorGrupo)
             .IsUnique(true);
         
