@@ -5,25 +5,29 @@ namespace UZUSIS.Domain.Entities;
 
 public class Feedback : Entity
 {
-    public List<Produto> Produtos { get; set; }
+    public Produto Produto { get; set; }
     public Usuario Cliente { get; set; }
-    public String Stars { get; set; }
+    public short Stars { get; set; }
+    public string Message { get; set; }
 
-    public void Classifique(short stars)
+    public void Classifique(short stars, string message)
     {
         switch (stars)
         {
             case 0:
-                Stars = EFeedback.Pessimo.ToString(); break;
+                Stars = (int)EFeedback.Pessimo; break;
             case 1:
-                Stars = EFeedback.Ruim.ToString(); break;
+                Stars = (int)EFeedback.Ruim; break;
             case 2:
-                Stars = EFeedback.Aceitavel.ToString(); break;
+                Stars = (int)EFeedback.Aceitavel; break;
             case 3:
-                Stars = EFeedback.Bom.ToString(); break;
+                Stars = (int)EFeedback.Bom; break;
             case 4:
-                Stars = EFeedback.Excelente.ToString(); break;
+                Stars = (int)EFeedback.Excelente; break;
         }
+
+        Message = message;
+
     }
     
 
