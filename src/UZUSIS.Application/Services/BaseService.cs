@@ -93,6 +93,7 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
             _notification.AddNotification("Não foi possível atualizar o usuário");
         }
         
+        _notification.NotFound();
         return null;
     }
 

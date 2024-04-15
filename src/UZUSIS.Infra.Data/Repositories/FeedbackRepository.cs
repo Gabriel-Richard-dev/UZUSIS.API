@@ -9,4 +9,8 @@ public class FeedbackRepository : EntityRepository<Feedback>, IFeedbackRepositor
     public FeedbackRepository(UZUSISContext context) : base(context)
     {
     }
+    
+    
+    
+    
 }

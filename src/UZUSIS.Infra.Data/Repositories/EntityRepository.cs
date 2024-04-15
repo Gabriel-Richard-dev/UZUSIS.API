@@ -52,7 +52,8 @@ public abstract class EntityRepository<T> : IUnityOfWork, IEntityRepository<T> w
 
     public virtual async Task<long?> Get(T entity)
     {
-        return _dbSet.FindAsync(entity).Result.Id;
+        var id =  _dbSet.FindAsync(entity).Result.Id;
+        return id;
     }
     
 

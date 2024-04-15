@@ -27,6 +27,7 @@ public class AuthController : BaseController
     [Route("login")]
     public async Task<IActionResult> Login()
     {
+        await _authenticationService.isAuthenticationValid();
         return CustomResponse();
     }
     

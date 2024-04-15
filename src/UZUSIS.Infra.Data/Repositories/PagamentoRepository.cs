@@ -9,4 +9,5 @@ public class PagamentoRepository : EntityRepository<Pagamento>, IPagamentoReposi
     public PagamentoRepository(UZUSISContext context) : base(context)
     {
     }
+    
 }

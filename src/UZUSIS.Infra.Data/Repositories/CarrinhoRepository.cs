@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using UZUSIS.Domain.Contracts.Repositories;
 using UZUSIS.Domain.Entities;
 using UZUSIS.Infra.Data.Context;
@@ -8,10 +9,13 @@ public class CarrinhoRepository : EntityRepository<Carrinho>, ICarrinhoRepositor
 {
     public CarrinhoRepository(UZUSISContext context) : base(context)
     {
-        
-        
-        
-        
+    }
+
+
+    public async Task SalvarEstado(long carrinhoId)
+    {
         
     }
+
+    
 }

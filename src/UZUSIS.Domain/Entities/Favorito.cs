@@ -1,13 +1,10 @@
-﻿using System.Collections.ObjectModel;
-
-namespace UZUSIS.Domain.Entities;
+﻿namespace UZUSIS.Domain.Entities;
 
 public class Favorito : Entity
 {
     public Usuario Cliente { get; set; }
-    public Collection<Produto> Produtos { get; set; } = new();
-
-
+    public List<Produto> Produtos { get; set; } = new();
+    
     public void AdicionarAosFavoritos(Produto produto)
     {
         Produtos.Add(produto);
@@ -33,10 +30,6 @@ public class Favorito : Entity
         {
             Produtos.Remove(p);
         }
-        
     }
-    
-    
-    
     
 }

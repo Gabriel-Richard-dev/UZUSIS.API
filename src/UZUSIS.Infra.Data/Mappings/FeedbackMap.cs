@@ -8,18 +8,18 @@ public class FeedbackMap : EntityMap<Feedback>
 {
     public void Configure(EntityTypeBuilder<Feedback> builder)
     {
-
         builder.ToTable("Feedback");
 
-        builder.HasOne(c => c.Cliente);
-        builder.HasMany<Produto>(f => f.Produtos);
-        
+        builder.HasOne(f => f.Cliente);
+        builder.HasOne(f => f.Produto);
         
         builder.HasKey(f => f.Id);
 
         builder.Property(f => f.Stars)
             .HasColumnType("VARCHAR(9)");
-
+        
+        builder.Property(f => f.Message)
+            .HasColumnType("VARCHAR(1000)");
    
         builder.Property(u => u.DataCriacao)
             .IsRequired()
@@ -29,7 +29,5 @@ public class FeedbackMap : EntityMap<Feedback>
         builder.Property(u => u.DataAtualizacao)
             .HasColumnType("DATETIME")
             .HasDefaultValue(DateTime.Now);
-
-
     }
 }
