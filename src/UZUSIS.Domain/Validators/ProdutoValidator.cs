@@ -19,15 +19,8 @@ public class ProdutoValidator : AbstractValidator<Produto>
         RuleFor(p => p.isDisponivel)
             .NotNull()
             .NotEmpty();
-        RuleFor(p => p.Tipo)
-            .NotEmpty()
-            .NotNull();
-        RuleFor(p => p.Tamanho)
-            .NotNull()
-            .NotEmpty();
-        RuleFor(p => p.Cor)
-            .NotNull()
-            .NotEmpty();
+        
+        
         RuleFor(p => p.Tag)
             .NotNull()
             .NotEmpty();

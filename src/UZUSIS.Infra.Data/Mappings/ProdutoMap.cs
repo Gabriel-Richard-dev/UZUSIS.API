@@ -15,7 +15,7 @@ public class ProdutoMap : EntityMap<Produto>
             .ValueGeneratedOnAdd()
             .HasColumnType("BIGINT");
 
-        builder.Property(p => p.Photo64);
+        builder.HasMany<byte[]>(p => p.Photos);
 
         builder.Property(p => p.Nome)
             .IsRequired()
@@ -28,14 +28,7 @@ public class ProdutoMap : EntityMap<Produto>
             .HasColumnType("BIT")
             .HasDefaultValue(1);
 
-        builder.Property(p => p.Tipo)
-            .HasColumnType("VARCHAR");
-
-        builder.Property(p => p.Tamanho)
-            .HasColumnType("VARCHAR(2)");
-
-        builder.Property(p => p.Cor)
-            .HasColumnType("VARCHAR");
+        builder.HasMany<Atributo>(p => p.Atributos);
 
         builder.Property(p => p.Tag)
             .HasColumnType("VARCHAR")

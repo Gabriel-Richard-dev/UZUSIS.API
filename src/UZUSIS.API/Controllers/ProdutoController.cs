@@ -9,14 +9,13 @@ namespace UZUSIS.API.Controllers;
 [Route("[controller]")]
 public class ProdutoController : BaseController
 {
-    public ProdutoController(INotification notification, IProdutoService produtoService, IGrupoService grupoService) : base(notification)
+    public ProdutoController(INotification notification, IProdutoService produtoService) : base(notification)
     {
         _produtoService = produtoService;
-        _grupoService = grupoService;
     }
 
     private readonly IProdutoService _produtoService;
-    private readonly IGrupoService _grupoService;
+ 
     
     
     [HttpPost]
@@ -27,18 +26,11 @@ public class ProdutoController : BaseController
         return CustomResponse(await _produtoService.Create(dto));
     }
 
-    [HttpPost]
-    [Route("cadastrar-grupo")]
-    [Authorize(Roles = "admin")]
-    public async Task<IActionResult> CadastrarGrupo(GrupoDTO dto)
-    {
-        return CustomResponse(await _grupoService.Create(dto));
-    }
 
     [HttpGet]
     [Route("search/{parseName}")]
     public async Task<IActionResult> Search(string parseName)
     {
-        return CustomResponse(await _produtoService.Get(parseName));
+        return CustomResponse();
     }
 }

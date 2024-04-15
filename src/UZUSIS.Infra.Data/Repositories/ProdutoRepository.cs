@@ -11,17 +11,6 @@ public class ProdutoRepository : EntityRepository<Produto>, IProdutoRepository
     {
         
     }
-
- 
-    public async Task<List<Produto>?> Get(string IdentificadorGrupo)
-    {
-        var list =_context.Produtos
-            .Where(p => p.IdentificadorGrupo
-                .Equals(IdentificadorGrupo))
-            .AsNoTrackingWithIdentityResolution()
-            .ToList();
-
-        return list;
-
-    }
+    
+    
 }

@@ -5,7 +5,7 @@ namespace UZUSIS.Domain.Entities;
 
 public class Feedback : Entity
 {
-    public Grupo Produto { get; set; }
+    public Produto Produto { get; set; }
     public Usuario Cliente { get; set; }
     public short Stars { get; set; }
     public string Message { get; set; }

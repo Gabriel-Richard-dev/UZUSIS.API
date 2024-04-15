@@ -34,7 +34,6 @@ public class UZUSISContext : DbContext, IUnityOfWork
         builder.ApplyConfiguration(new CarrinhoMap());
         builder.ApplyConfiguration(new CarrinhoProdutoMap());
         builder.ApplyConfiguration(new ProdutoMap());
-        builder.ApplyConfiguration(new GrupoMap());
         builder.ApplyConfiguration(new PagamentoMap());
         builder.ApplyConfiguration(new FeedbackMap());
     }

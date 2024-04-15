@@ -23,7 +23,6 @@ public static class DependencyInjection
         services.AddScoped<IFeedbackService, FeedbackService>();
         services.AddScoped<ICarrinhoProdutoService, CarrinhoProdutoService>();
         services.AddScoped<ICarrinhoSevice, CarrinhoService>();
-        services.AddScoped<IGrupoService, GrupoService>();
         
         //repositories
         
@@ -33,7 +32,6 @@ public static class DependencyInjection
         services.AddScoped<IFeedbackRepository, FeedbackRepository>();
         services.AddScoped<ICarrinhoProdutoRepository, CarrinhoProdutoRepository>();
         services.AddScoped<ICarrinhoRepository, CarrinhoRepository>();
-        services.AddScoped<IGrupoRepository, GrupoRepository>();
 
     }
 }
