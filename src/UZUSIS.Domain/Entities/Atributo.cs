@@ -2,6 +2,6 @@ namespace UZUSIS.Domain.Entities;
 
 public class Atributo : Entity
 {
-    public string Title { get; set; }
-    public List<AtributoOption> Options { get; set; } = new();
+    public string AtributoTitle { get; set; }
+    public List<AtributoOption> AtributoOptions { get; set; } = new();
 }

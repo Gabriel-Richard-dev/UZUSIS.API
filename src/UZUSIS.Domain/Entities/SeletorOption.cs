@@ -1,6 +1,9 @@
 namespace UZUSIS.Domain.Entities;
 
-public class SeletorOption
+public class SeletorOption : Entity
 {
-    public string Title { get; set; }    
+    public string SeletorOptionTitle { get; set; }
+    public byte[]? Foto { get; set; }
+    public Atributo Atributo { get; set; }
+
 }
