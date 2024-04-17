@@ -17,7 +17,7 @@ builder.Services.AddDbContext<UZUSISContext>();
 
 builder.Services.AddDependencyInjection();
 builder.Services.ConfigureMappings();
-builder.Services.AuthConfiguration();
+builder.Services.AuthConfiguration(builder.Configuration);
 
 
 var app = builder.Build();

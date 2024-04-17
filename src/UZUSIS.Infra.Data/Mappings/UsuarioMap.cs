@@ -22,8 +22,7 @@ public class UsuarioMap : EntityMap<Usuario>
         builder.Property(u => u.CPF)
             .IsRequired()
             .HasColumnType("VARCHAR(11)");
-
-
+        
         builder.Property(u => u.Email)
             .IsRequired()
             .HasColumnType("VARCHAR(180)");
