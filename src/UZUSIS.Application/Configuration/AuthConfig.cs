@@ -1,5 +1,6 @@
 using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
@@ -7,11 +8,11 @@ namespace UZUSIS.Application.Configuration;
 
 public static class AuthConfig
 {
-    public static void AuthConfiguration(this IServiceCollection builder)
+    public static void AuthConfiguration(this IServiceCollection builder, IConfiguration configuration)
     {
 
-        var key = Encoding.ASCII.GetBytes(UZUSIS.Domain.Keys.Key.Secret);
-
+        var key = Encoding.ASCII.GetBytes(configuration["KeySecret"]!);
+        
         builder.AddAuthentication(options =>
         {
             options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
