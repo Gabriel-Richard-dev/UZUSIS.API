@@ -14,4 +14,9 @@
     <ProjectReference Include="..\UZUSIS.Core\UZUSIS.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\PaginatedSearch\" />
+    <Folder Include="Pagination\" />
+  </ItemGroup>
+
 </Project>
