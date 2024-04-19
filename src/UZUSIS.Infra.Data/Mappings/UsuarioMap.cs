@@ -12,9 +12,6 @@ public class UsuarioMap : EntityMap<Usuario>
 
         builder.HasKey(u => u.Id);
         
-        builder.Property(u => u.Photo64)
-            .HasColumnType("IMAGE");
-        
         builder.Property(u => u.Nome)
             .IsRequired()
             .HasColumnType("VARCHAR(80)");
@@ -25,10 +22,6 @@ public class UsuarioMap : EntityMap<Usuario>
         builder.Property(u => u.CPF)
             .IsRequired()
             .HasColumnType("VARCHAR(11)");
-
-        builder.Property(u => u.Genero)
-            .IsRequired()
-            .HasColumnType("CHAR");
 
         builder.Property(u => u.Email)
             .IsRequired()
@@ -45,9 +38,6 @@ public class UsuarioMap : EntityMap<Usuario>
             .HasDefaultValue("cliente")
             .HasColumnType("VARCHAR(11)");
         
-        builder.Property(u => u.Tamanho)
-            .IsRequired()
-            .HasColumnType("VARCHAR(2)");
         builder.Property(u => u.DataNascimento)
             .IsRequired()
             .HasColumnType("DATE");

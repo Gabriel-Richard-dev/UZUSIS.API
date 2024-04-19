@@ -5,19 +5,9 @@ namespace UZUSIS.Domain.Entities;
 
 public class Usuario  : Entity
 {
-    public Usuario(byte[]? photo64, string nome, string cpf, char genero,
-        string email, string password, string role, string tamanho, DateTime dataNascimento)
+    public Usuario(string nome)
     {
-        Photo64 = photo64;
         Nome = nome;
-        CPF = cpf;
-        Genero = genero;
-        Email = email;
-        Password = password;
-        Role = role;
-        Tamanho = tamanho;
-        DataNascimento = dataNascimento;
-        
         Validate();
         CriptografyPass();
     }
@@ -26,16 +16,13 @@ public class Usuario  : Entity
     {
         
     }
-
-    public byte[]? Photo64 { get; set; }
+    
     public string Nome { get; private set; }
     public string CPF { get; set; }
     
-    public char Genero { get; set; }
     public string Email { get; set; }
     public string Password { get; private set; }
     public string Role { get; set; }
-    public string Tamanho { get; set; }
     
     public DateTime DataNascimento { get; set; }
 

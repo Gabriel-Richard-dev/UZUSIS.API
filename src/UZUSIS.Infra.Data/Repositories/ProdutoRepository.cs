@@ -11,6 +11,13 @@ public class ProdutoRepository : EntityRepository<Produto>, IProdutoRepository
     {
         
     }
-    
-    
+
+
+    public Task<List<Produto>> Get(string parseName)
+    {
+        var list = _context.Produtos.AsNoTrackingWithIdentityResolution()
+            .Where(p => p.Nome.ToLower().Equals(parseName.ToLower())).ToListAsync();
+
+        return list;
+    }
 }

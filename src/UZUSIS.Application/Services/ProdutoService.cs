@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using UZUSIS.Application.Contracts.Services;
+using UZUSIS.Application.DTO;
 using UZUSIS.Domain.Contracts.Repositories;
 using UZUSIS.Domain.Entities;
 
@@ -16,7 +17,18 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
 
     private readonly IProdutoRepository _produtoRepository;
 
+    public async Task<List<Produto>> Get()
+    {
+        throw new NotImplementedException();
+    }
+    
+    public async Task<List<Produto>> Get(string parseName)
+    {
+        return await _produtoRepository.Get(parseName);
+    }
 
-    
-    
+    public Task<List<Produto>> Search(SearchProdutoDTO search)
+    {
+        throw new NotImplementedException();
+    }
 }

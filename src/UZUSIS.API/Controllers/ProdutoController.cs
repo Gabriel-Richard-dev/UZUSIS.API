@@ -1,3 +1,4 @@
+using System.Net;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using UZUSIS.Application;
@@ -29,8 +30,10 @@ public class ProdutoController : BaseController
 
     [HttpGet]
     [Route("search/{parseName}")]
-    public async Task<IActionResult> Search(string parseName)
+    public async Task<IActionResult> Search(SearchProdutoDTO dto)
     {
-        return CustomResponse();
+        return CustomResponse(_produtoService.Search(dto));
     }
+    
+    
 }

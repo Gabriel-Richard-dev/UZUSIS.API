@@ -10,7 +10,6 @@ public class AtributoMap : EntityMap<Atributo>
     {
         builder.Property(a => a.Title)
             .HasColumnType("VARCHAR");
-        builder.HasMany<AtributoOption>(a => a.Options);
         
     }
 }
