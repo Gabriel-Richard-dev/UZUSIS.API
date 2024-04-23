@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "S/kC7ol+TBpZ7RmKjGvRAPo8EmvKjJDhDvc/C9l6TZaJ1j7vkdmR9kE5CSSeeG/Nw8ktUcAmkZxFJBUK1li0Pg==",
+  "dgSpecHash": "i63rf3hdCSMfrHIrXPse/py5OSRu6tKTUP894wK0KysdTUi2E5CYCbcfh3NSY2abkZRZwC4DKBSO3RPRYVAOrA==",
   "success": true,
   "projectFilePath": "/home/gabrielrichard/UZUSIS.API/src/UZUSIS.API/UZUSIS.API.csproj",
   "expectedPackageFiles": [
@@ -29,6 +29,8 @@
     "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "/home/gabrielrichard/.nuget/packages/microsoft.identitymodel.tokens/7.4.1/microsoft.identitymodel.tokens.7.4.1.nupkg.sha512",
     "/home/gabrielrichard/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/mysqlconnector/2.3.5/mysqlconnector.2.3.5.nupkg.sha512",
+    "/home/gabrielrichard/.nuget/packages/pomelo.entityframeworkcore.mysql/8.0.0/pomelo.entityframeworkcore.mysql.8.0.0.nupkg.sha512",
     "/home/gabrielrichard/.nuget/packages/swashbuckle.aspnetcore/6.4.0/swashbuckle.aspnetcore.6.4.0.nupkg.sha512",
     "/home/gabrielrichard/.nuget/packages/swashbuckle.aspnetcore.swagger/6.4.0/swashbuckle.aspnetcore.swagger.6.4.0.nupkg.sha512",
     "/home/gabrielrichard/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.4.0/swashbuckle.aspnetcore.swaggergen.6.4.0.nupkg.sha512",

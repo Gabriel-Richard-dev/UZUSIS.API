@@ -21,6 +21,7 @@ public class ProdutoMap : EntityMap<Produto>
             .IsRequired()
             .HasColumnType("VARCHAR");
 
+        
         builder.Property(p => p.Descricao)
             .HasColumnType("VARCHAR");
 
@@ -28,6 +29,12 @@ public class ProdutoMap : EntityMap<Produto>
             .HasColumnType("BIT")
             .HasDefaultValue(1);
 
+        builder.Property(p => p.isEsgotado)
+            .HasColumnType("BIT")
+            .HasDefaultValue(0);
+        
+        builder.HasOne(p => p.Seletor);
+        
 
         builder.Property(p => p.Tag)
             .HasColumnType("VARCHAR")

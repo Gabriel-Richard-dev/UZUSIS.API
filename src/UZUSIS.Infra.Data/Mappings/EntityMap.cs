@@ -8,6 +8,7 @@ public abstract class EntityMap<T> : IEntityTypeConfiguration<T> where T : Entit
 {
     public void Configure(EntityTypeBuilder<T> builder)
     {
+        
         builder.HasKey(e => e.Id);
         
         builder.Property(e => e.Id)

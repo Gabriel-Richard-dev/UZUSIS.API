@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using UZUSIS.API.Configuration;
 using UZUSIS.Application.Configuration;
 using UZUSIS.Infra.Data.Context;
@@ -12,7 +13,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.ConfigureSwagger();
-builder.Services.AddDbContext<UZUSISContext>();
+builder.Services.AddDbContext<UZUSISContext>(options =>
+{
+    var connect = builder.Configuration.GetConnectionString("Connection");
+    options.EnableDetailedErrors();
+    options.UseMySql(connect, ServerVersion.AutoDetect(connect));
+});
 
 
 builder.Services.AddDependencyInjection();

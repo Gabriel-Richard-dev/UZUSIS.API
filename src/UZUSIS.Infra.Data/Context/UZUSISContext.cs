@@ -9,14 +9,18 @@ public class UZUSISContext : DbContext, IUnityOfWork
 {
 
     public UZUSISContext()
-    { }
-
+    {
+        
+    }
+    
     public UZUSISContext(DbContextOptions<UZUSISContext> options) : base(options)
     { }
     
 
-    public UZUSISContext(DbContextOptionsBuilder options)
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
     {
+        var connection = "server=localhost; port=3306;database=UZUSIS; uid=root;password=";
+        options.UseMySql(connection, ServerVersion.AutoDetect(connection));
         options.EnableDetailedErrors();
     }
     
@@ -30,12 +34,17 @@ public class UZUSISContext : DbContext, IUnityOfWork
     protected override void OnModelCreating(ModelBuilder builder)
     {
       
-        builder.ApplyConfiguration(new UsuarioMap());
+        builder.ApplyConfiguration(new AtributoMap());
         builder.ApplyConfiguration(new CarrinhoMap());
         builder.ApplyConfiguration(new CarrinhoProdutoMap());
-        builder.ApplyConfiguration(new ProdutoMap());
-        builder.ApplyConfiguration(new PagamentoMap());
+        builder.ApplyConfiguration(new FavoritoMap());
         builder.ApplyConfiguration(new FeedbackMap());
+        builder.ApplyConfiguration(new HistoricoPagamentoMap());
+        builder.ApplyConfiguration(new PagamentoMap());
+        builder.ApplyConfiguration(new ProdutoMap());
+        builder.ApplyConfiguration(new SeletorMap());
+        builder.ApplyConfiguration(new SeletorOptionOptionMap());
+        builder.ApplyConfiguration(new UsuarioMap());
     }
     
     
