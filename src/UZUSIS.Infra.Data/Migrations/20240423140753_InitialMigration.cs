@@ -24,13 +24,29 @@ namespace UZUSIS.Infra.Data.Migrations
                     Title = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 900, DateTimeKind.Local).AddTicks(1172)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 559, DateTimeKind.Local).AddTicks(5317))
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Atributo", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "AtributoOption",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    OptionName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 560, DateTimeKind.Local).AddTicks(4643))
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AtributoOption", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -41,9 +57,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 910, DateTimeKind.Local).AddTicks(405)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 569, DateTimeKind.Local).AddTicks(8825))
                 },
                 constraints: table =>
                 {
@@ -60,9 +74,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     Title = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 910, DateTimeKind.Local).AddTicks(6180)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(4257))
                 },
                 constraints: table =>
                 {
@@ -88,9 +100,7 @@ namespace UZUSIS.Infra.Data.Migrations
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataNascimento = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 910, DateTimeKind.Local).AddTicks(9995)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(8391))
                 },
                 constraints: table =>
                 {
@@ -110,9 +120,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     Expires = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     HistoricoPagamentoId = table.Column<long>(type: "bigint", nullable: true),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 910, DateTimeKind.Local).AddTicks(2295)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(701))
                 },
                 constraints: table =>
                 {
@@ -137,9 +145,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     AtributoId = table.Column<long>(type: "bigint", nullable: false),
                     SeletorId = table.Column<long>(type: "bigint", nullable: true),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 910, DateTimeKind.Local).AddTicks(8053)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(6415))
                 },
                 constraints: table =>
                 {
@@ -167,9 +173,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     valorTotal = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
                     ClienteId = table.Column<long>(type: "bigint", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 900, DateTimeKind.Local).AddTicks(2778)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 560, DateTimeKind.Local).AddTicks(6527))
                 },
                 constraints: table =>
                 {
@@ -191,9 +195,7 @@ namespace UZUSIS.Infra.Data.Migrations
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     ClienteId = table.Column<long>(type: "bigint", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 905, DateTimeKind.Local).AddTicks(4040)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 565, DateTimeKind.Local).AddTicks(6323))
                 },
                 constraints: table =>
                 {
@@ -227,9 +229,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     FavoritoId = table.Column<long>(type: "bigint", nullable: true),
                     PagamentoId = table.Column<long>(type: "bigint", nullable: true),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 910, DateTimeKind.Local).AddTicks(4264)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(2536))
                 },
                 constraints: table =>
                 {
@@ -267,9 +267,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     CarrinhoId = table.Column<long>(type: "bigint", nullable: false),
                     ProdutoId = table.Column<long>(type: "bigint", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 903, DateTimeKind.Local).AddTicks(43)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 563, DateTimeKind.Local).AddTicks(4519))
                 },
                 constraints: table =>
                 {
@@ -301,9 +299,7 @@ namespace UZUSIS.Infra.Data.Migrations
                     Message = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     DataCriacao = table.Column<DateTime>(type: "DATE", nullable: false, defaultValue: new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified)),
-                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 10, 38, 18, 908, DateTimeKind.Local).AddTicks(6740)),
-                    Erros = table.Column<string>(type: "longtext", nullable: true)
-                        .Annotation("MySql:CharSet", "utf8mb4")
+                    DataAtualizacao = table.Column<DateTime>(type: "DATETIME", nullable: false, defaultValue: new DateTime(2024, 4, 23, 11, 7, 53, 568, DateTimeKind.Local).AddTicks(6490))
                 },
                 constraints: table =>
                 {
@@ -392,6 +388,9 @@ namespace UZUSIS.Infra.Data.Migrations
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AtributoOption");
+
             migrationBuilder.DropTable(
                 name: "CarrinhoProduto");
 
