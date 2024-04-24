@@ -5,6 +5,7 @@ using UZUSIS.Infra.Data.Context;
 using UZUSIS.Infra.Data.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddSingleton(builder.Configuration);
 
 // Add services to the container.
 
@@ -15,11 +16,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSwagger();
 builder.Services.AddDbContext<UZUSISContext>(options =>
 {
-    var connect = builder.Configuration.GetConnectionString("Padrao");
+    var connect = builder.Configuration.GetConnectionString("Connect");
     options.EnableDetailedErrors();
     options.UseMySql(connect, ServerVersion.AutoDetect(connect));
 });
-
 
 builder.Services.AddDependencyInjection();
 builder.Services.ConfigureMappings();

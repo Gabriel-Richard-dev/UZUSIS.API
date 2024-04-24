@@ -11,7 +11,7 @@ public static class AuthConfig
     public static void AuthConfiguration(this IServiceCollection builder, IConfiguration configuration)
     {
 
-        var key = Encoding.ASCII.GetBytes(configuration["KeySecret"]!);
+        var key = Encoding.ASCII.GetBytes(configuration.GetSection("KeySecret")["Default"]!);
         
         builder.AddAuthentication(options =>
         {
