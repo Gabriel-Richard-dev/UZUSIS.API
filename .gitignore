@@ -483,3 +483,9 @@ $RECYCLE.BIN/
 # Vim temporary swap files
 *.swp
 
+#ENVIROMENT-VARIABLES
+src/UZUSIS.API/appsettings.Development.json
+
+
+
+
