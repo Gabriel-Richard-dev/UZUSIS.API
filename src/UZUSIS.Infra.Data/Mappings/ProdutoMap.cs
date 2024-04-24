@@ -22,6 +22,8 @@ public class ProdutoMap : EntityMap<Produto>
             .HasColumnType("VARCHAR");
 
         
+        
+        // ##test
         builder.Property(p => p.Descricao)
             .HasColumnType("VARCHAR");
 
