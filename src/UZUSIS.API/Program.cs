@@ -15,7 +15,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.ConfigureSwagger();
 builder.Services.AddDbContext<UZUSISContext>(options =>
 {
-    var connect = builder.Configuration.GetConnectionString("Connection");
+    var connect = builder.Configuration.GetConnectionString("Padrao");
     options.EnableDetailedErrors();
     options.UseMySql(connect, ServerVersion.AutoDetect(connect));
 });

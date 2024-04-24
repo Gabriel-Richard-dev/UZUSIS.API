@@ -16,13 +16,7 @@ public class UZUSISContext : DbContext, IUnityOfWork
     public UZUSISContext(DbContextOptions<UZUSISContext> options) : base(options)
     { }
     
-
-    protected override void OnConfiguring(DbContextOptionsBuilder options)
-    {
-        var connection = "server=localhost; port=3306;database=UZUSIS; uid=root;password=";
-        options.UseMySql(connection, ServerVersion.AutoDetect(connection));
-        options.EnableDetailedErrors();
-    }
+    
     
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Carrinho> Carrinhos { get; set; }

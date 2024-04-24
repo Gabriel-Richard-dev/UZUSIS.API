@@ -33,7 +33,6 @@ public class AdminController : BaseController
         var userCreated = await _usuarioService.Create(dto);
         var carrinhoCreated = await _carrinhoSevice.CreateCarrinho(userCreated);
         return CustomResponse(new Object[] {userCreated!, carrinhoCreated!});
-        
     }
     
     [Route("cadastrar-admin")]
