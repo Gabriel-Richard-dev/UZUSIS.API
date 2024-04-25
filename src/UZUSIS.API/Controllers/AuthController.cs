@@ -4,6 +4,7 @@ using UZUSIS.Application;
 using UZUSIS.Application.Contracts.Services;
 using UZUSIS.Core.Criptografy;
 using UZUSIS.Application.DTO;
+using UZUSIS.Application.DTO.Admin;
 using UZUSIS.Application.Services;
 
 namespace UZUSIS.API.Controllers;
@@ -28,7 +29,21 @@ public class AuthController : BaseController
     [Route("login")]
     public async Task<IActionResult> Login()
     {
-        await _authenticationService.isAuthenticationValid();
+        await _authenticationService.IsAuthenticationValid(new UserLoginDTO());
+        return CustomResponse();
+    }
+    
+    [HttpPost]
+    [Route("/Admin/login")]
+    public async Task<IActionResult> AdminLogin([FromBody]AdminLoginDTO loginDto)
+    {
+        if(await _authenticationService.IsAuthenticationValid(loginDto))
+            return CustomResponse(_tokenService.GenerateToken(new UsuarioDTO()
+            {
+                Id = 0,
+                Role = "admin"
+            }));
+
         return CustomResponse();
     }
     

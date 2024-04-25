@@ -10,7 +10,7 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
 {
 
     public ProdutoService(INotification notification, IMapper mapper,
-        IProdutoRepository produtoRepository) : base(notification, mapper)
+        IProdutoRepository produtoRepository) : base(notification, mapper, produtoRepository)
     {
         _produtoRepository = produtoRepository;
     }
@@ -27,8 +27,26 @@ public class ProdutoService : BaseService<Produto>, IProdutoService
         return await _produtoRepository.Get(parseName);
     }
 
-    public Task<List<Produto>> Search(SearchProdutoDTO search)
+    public async Task<List<Produto>?> Search(string search)
     {
-        throw new NotImplementedException();
+        var produtos = await _produtoRepository.Get(search);
+
+        if (produtos.Count > 0)
+        {
+            return produtos;
+        }
+
+        return null;
+    }
+
+
+    protected override async Task<bool> Existis(Produto produto)
+    {
+        if ((await Search(produto.Nome)) is not null)
+        {
+            return true;
+        }
+
+        return false;
     }
 }

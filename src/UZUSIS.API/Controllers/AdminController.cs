@@ -34,15 +34,6 @@ public class AdminController : BaseController
         var carrinhoCreated = await _carrinhoSevice.CreateCarrinho(userCreated);
         return CustomResponse(new Object[] {userCreated!, carrinhoCreated!});
     }
-    
-    [Route("cadastrar-admin")]
-    [HttpPost]
-    [Authorize(Roles = "admin")]
-    public async Task<IActionResult> CadastrarAdmin(UsuarioDTO dto)
-    {
-        dto.Role = "admin";
-        var userCreated = await _usuarioService.Create(dto);
-        return CustomResponse(userCreated);
-    }
+ 
     
 }

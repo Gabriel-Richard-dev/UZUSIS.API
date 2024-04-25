@@ -6,5 +6,5 @@ namespace UZUSIS.Application.Contracts.Services;
 public interface IProdutoService : IBaseService<Produto>
 {
     Task<List<Produto>> Get(string parseName);
-    Task<List<Produto>> Search(SearchProdutoDTO search);
+    Task<List<Produto>> Search(string parse);
 }

@@ -12,6 +12,9 @@ public interface IBaseService<T> where T : Entity
 
     Task<T?> Update(T entity);
     Task Remove(T entity);
+    
+    
+    Task<dynamic> teste<DTO>(DTO entitydto) where DTO : BaseDTO;
 
 
 }

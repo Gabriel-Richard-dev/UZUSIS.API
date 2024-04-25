@@ -28,12 +28,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 559, DateTimeKind.Local).AddTicks(5317));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 67, DateTimeKind.Local).AddTicks(3665));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -50,15 +50,18 @@ namespace UZUSIS.Infra.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
+                    b.Property<long?>("AtributoId")
+                        .HasColumnType("bigint");
+
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 560, DateTimeKind.Local).AddTicks(4643));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 67, DateTimeKind.Local).AddTicks(6370));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<string>("OptionName")
                         .IsRequired()
@@ -68,6 +71,8 @@ namespace UZUSIS.Infra.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("AtributoId");
 
                     b.ToTable("AtributoOption");
                 });
@@ -84,12 +89,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 560, DateTimeKind.Local).AddTicks(6527));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 67, DateTimeKind.Local).AddTicks(8824));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<decimal>("valorTotal")
                         .HasColumnType("decimal(65,30)");
@@ -113,12 +118,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 563, DateTimeKind.Local).AddTicks(4519));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 70, DateTimeKind.Local).AddTicks(5303));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<long>("ProdutoId")
                         .HasColumnType("bigint");
@@ -144,12 +149,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 565, DateTimeKind.Local).AddTicks(6323));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 72, DateTimeKind.Local).AddTicks(7827));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.HasKey("Id");
 
@@ -170,12 +175,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 568, DateTimeKind.Local).AddTicks(6490));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 76, DateTimeKind.Local).AddTicks(52));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<string>("Message")
                         .IsRequired()
@@ -205,12 +210,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 569, DateTimeKind.Local).AddTicks(8825));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 77, DateTimeKind.Local).AddTicks(2799));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.HasKey("Id");
 
@@ -226,12 +231,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(701));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 77, DateTimeKind.Local).AddTicks(4775));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<DateTime>("DataDePagamento")
                         .HasColumnType("datetime(6)");
@@ -267,12 +272,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(2536));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 77, DateTimeKind.Local).AddTicks(6663));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<string>("Descricao")
                         .IsRequired()
@@ -326,12 +331,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(4257));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 77, DateTimeKind.Local).AddTicks(8480));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -354,12 +359,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(6415));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 78, DateTimeKind.Local).AddTicks(502));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<byte[]>("Foto")
                         .HasColumnType("longblob");
@@ -393,12 +398,12 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATETIME")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 11, 7, 53, 570, DateTimeKind.Local).AddTicks(8391));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 9, 20, 33, 78, DateTimeKind.Local).AddTicks(2202));
 
                     b.Property<DateTime>("DataCriacao")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("DATE")
-                        .HasDefaultValue(new DateTime(2024, 4, 23, 0, 0, 0, 0, DateTimeKind.Unspecified));
+                        .HasDefaultValue(new DateTime(2024, 4, 25, 0, 0, 0, 0, DateTimeKind.Unspecified));
 
                     b.Property<DateTime>("DataNascimento")
                         .HasColumnType("datetime(6)");
@@ -422,6 +427,13 @@ namespace UZUSIS.Infra.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Usuarios");
+                });
+
+            modelBuilder.Entity("UZUSIS.Domain.Entities.AtributoOption", b =>
+                {
+                    b.HasOne("UZUSIS.Domain.Entities.Atributo", null)
+                        .WithMany("AtributoOptions")
+                        .HasForeignKey("AtributoId");
                 });
 
             modelBuilder.Entity("UZUSIS.Domain.Entities.Carrinho", b =>
@@ -517,7 +529,7 @@ namespace UZUSIS.Infra.Data.Migrations
             modelBuilder.Entity("UZUSIS.Domain.Entities.SeletorOption", b =>
                 {
                     b.HasOne("UZUSIS.Domain.Entities.Atributo", "Atributo")
-                        .WithMany("AtributoOptions")
+                        .WithMany()
                         .HasForeignKey("AtributoId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

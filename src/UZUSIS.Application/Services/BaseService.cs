@@ -20,7 +20,7 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
 
     internal readonly INotification _notification;
     protected readonly IMapper _mapper;
-    private readonly IEntityRepository<T> _repository;
+    protected readonly IEntityRepository<T> _repository;
 
     protected BaseService(INotification notification, IMapper mapper)
     {
@@ -45,12 +45,6 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
     {
         var entity = await _repository.Get(id);
 
-        if(!(await Existis(entity)))
-        {
-            return null;
-        }
-
-        
         return entity;
 
     }
@@ -58,12 +52,13 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
 
     public virtual async Task<T?> Create<DTO>(DTO entitydto) where DTO : BaseDTO
     {
-        var entity = _mapper.Map<T>(entitydto);
+        
+        T entity = _mapper.Map<T>(entitydto);
         entity.Validate();
         
         if ((await Existis(entity)))
         {
-            _notification.AddNotification($"{typeof(T)} já existente.");
+            _notification.AddNotification($"{entity.GetType()} já existente.");
             return null;
         }
         
@@ -75,6 +70,11 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
 
         _notification.AddNotification($"Service: Não foi possível criar {typeof(T)}");
         return null;
+    }
+
+    public virtual async Task<dynamic> teste<DTO>(DTO entitydto) where DTO : BaseDTO
+    {
+        return entitydto;
     }
 
     public async Task<T?> Update(T entity)
@@ -105,18 +105,17 @@ public abstract class BaseService<T> : IBaseService<T> where T : Entity
         }
     }
 
-    public async Task<bool> Existis(T entity)
+    protected virtual async Task<bool> Existis(T entity)
     {
         
         var entityExists = await Get(entity.Id);
         
-        if (entityExists is null)
+        if (entityExists is not null)
         {
-            _notification.NotFound();
-            return false;
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     

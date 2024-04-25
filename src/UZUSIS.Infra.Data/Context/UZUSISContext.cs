@@ -16,15 +16,13 @@ public class UZUSISContext : DbContext, IUnityOfWork
     public UZUSISContext(DbContextOptions<UZUSISContext> options) : base(options)
     { }
     
-    
-    
+   
     public DbSet<Usuario> Usuarios { get; set; }
     public DbSet<Carrinho> Carrinhos { get; set; }
     public DbSet<Produto> Produtos { get; set; }
     public DbSet<Pagamento> Payments { get; set; }
-    public DbSet<Pagamento> Grupos { get; set; }
-    
-    
+
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
       

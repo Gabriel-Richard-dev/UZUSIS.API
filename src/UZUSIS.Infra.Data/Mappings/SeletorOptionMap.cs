@@ -14,8 +14,7 @@ public class SeletorOptionOptionMap : EntityMap<SeletorOption>
 
         builder.Property(s => s.Foto);
         
-        builder.HasOne(s => s.Atributo)
-            .WithMany(a => a.AtributoOptions);
+        builder.HasOne(s => s.Atributo);
 
     }
 }
